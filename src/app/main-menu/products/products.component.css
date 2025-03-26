@@ -1,0 +1,85 @@
+#container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
+  font-family: sans-serif;
+  color: white;
+}
+.product-item {
+  background-color: rgb(35, 57, 67);
+  margin-top: 2%;
+  margin-bottom: 5%;
+  width: 25vh;
+  min-height: 45svh;
+  max-height: 50svh;
+  text-align: center;
+  cursor: pointer;
+  padding: 1vi;
+  :is(img) {
+    width: 100%;
+  }
+}
+h2,
+h1 {
+  font-family: sans-serif;
+  text-align: center;
+  font-style: bold;
+  font-size: 20px;
+}
+h1 {
+  color: #ff0000;
+}
+#containsAll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 1vi;
+  padding-right: 1vi;
+}
+#buttonProducts {
+  width: fit-content;
+  padding: 1% 2%;
+  border: 2px solid rgb(215, 215, 215);
+  border-radius: 50px;
+  margin-bottom: 2%;
+  margin-top: 1vi;
+  font-family: "Posterama 1919 W01 SemiBold";
+  text-transform: uppercase;
+  transition: transform 0.5s ease, border 0.5s ease, color 0.5s ease;
+  cursor: pointer;
+  color: white;
+}
+#buttonProducts:hover {
+  transform: scale(1.05);
+  border: 2px solid #ff0000;
+  color: #ff0000;
+}
+@media (min-width: 1200px) {
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  #container {
+    flex-direction: column;
+  }
+  #buttonProducts {
+    margin-top: 5vh;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  #container {
+    flex-direction: column;
+  }
+  #buttonProducts {
+    margin-top: 5vh;
+  }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+  #container {
+    flex-direction: column;
+  }
+  #buttonProducts {
+    margin-top: 5vh;
+  }
+}
+@media (max-width: 279px) {
+}

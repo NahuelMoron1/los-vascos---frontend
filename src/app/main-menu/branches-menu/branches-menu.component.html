@@ -1,0 +1,15 @@
+<div id="container">
+  <div id="present"><p>MARCAS</p></div>
+  <div id="allCategories">
+    <div
+      class="category-item"
+      *ngFor="let brand of brands"
+      routerLink="/products/brands/{{ brand.name }}"
+    >
+      <img src="{{ bffurl }}{{ brand.image }}" alt="" />
+      <p>
+        {{ brand.name.toUpperCase() }}
+      </p>
+    </div>
+  </div>
+</div>

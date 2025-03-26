@@ -1,0 +1,78 @@
+<div id="align">
+  <div id="container">
+    <i class="fa fa-user-plus fa-5x" aria-hidden="true"></i>
+    <p id="loginMessage">REGISTRARSE</p>
+
+    <div id="dataText">
+      <label for="email"
+        >Email
+        <span *ngIf="emailRepeated" class="messages"
+          >El email ya se encuentra registrado</span
+        >
+        <span *ngIf="noMail" class="messages"
+          >No puede dejar el email vacío</span
+        ></label
+      >
+      <input
+        type="email"
+        name="email"
+        id="emailInp"
+        [(ngModel)]="searchTerm"
+        placeholder="miEmail@gmail.com"
+      />
+
+      <label for="username"
+        >Nombre de usuario
+        <span *ngIf="noUsername" class="messages"
+          >No puede dejar el usuario vacío</span
+        ></label
+      >
+      <input
+        type="text"
+        name="username"
+        [(ngModel)]="usernameTerm"
+        (input)="noUsername = false"
+        id="usernameInp"
+      />
+
+      <div *ngIf="isAdmin()" id="sellerDiv">
+        <label for="seller">Vendedor</label>
+        <input
+          type="text"
+          name="seller"
+          [(ngModel)]="sellerTerm"
+          id="sellerInp"
+        />
+      </div>
+
+      <label for="password"
+        >Contraseña
+        <span *ngIf="!passwordFormat" class="messages">
+          La contraseña no cumple con los requisitos</span
+        >
+        <span class="messages" *ngIf="noPass"
+          >No puede dejar la contraseña vacía</span
+        ></label
+      >
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="passTerm"
+        (input)="verifyPassword()"
+        id="passwordInp"
+        required
+      />
+    </div>
+
+    <p id="requirements">
+      La contraseña debe incluir como minimo 1 mayuscula, 1 minuscula y 1
+      numero, siendo minimamente de 8 caracteres.
+    </p>
+
+    <button id="login" (click)="createUser()">REGISTRARSE</button>
+
+    <app-user-options></app-user-options>
+
+    <p id="registered" *ngIf="dataCreated">Te registraste correctamente!</p>
+  </div>
+</div>

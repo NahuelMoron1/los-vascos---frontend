@@ -1,0 +1,62 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    font-family: sans-serif;
+    text-align: center;
+    width: 114.5vh;
+    height: 80vh;
+    background-color: rgb(239, 80, 80);
+    color: white;
+    h1{
+        letter-spacing: 3px;
+    }
+}
+p{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+#check{
+    padding-top: 10vh;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+    #container {
+        width: calc(100vi - 4vh);
+        padding-bottom: 4vh;
+        height: auto;
+    }
+    #bankData {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile devices (landscape) */
+@media (min-width: 481px) and (max-width: 767px) {
+    #container {
+        width: calc(100vi - 4vh);
+        padding-bottom: 4vh;
+        height: auto;
+    }
+}
+
+/* Mobile devices (portrait) */
+@media (max-width: 480px) and (min-width: 280px) {
+    #container {
+        width: calc(100vi - 4vh);
+        padding-bottom: 4vh;
+        height: auto;
+    }
+}
+
+/* Very small devices (portrait) */
+@media (max-width: 279px) {
+    #container {
+        width: calc(100vi - 4vh);
+        padding-bottom: 4vh;
+        height: auto;
+    }
+}

@@ -1,0 +1,37 @@
+<app-add-features
+  [productID]="productID"
+  [onModify]="onModify"
+  [options]="options"
+  [optionSelected]="optionSelected"
+  [optionTerm]="optionTerm"
+>
+</app-add-features>
+
+<app-update-option
+  *ngIf="options.length > 0"
+  [productID]="productID"
+  [onModify]="onModify"
+  [options]="options"
+  [optionSelected]="optionSelected"
+  [optionTerm]="optionTerm"
+>
+</app-update-option>
+
+<app-add-option
+  [productID]="productID"
+  [onModify]="onModify"
+  [options]="options"
+  [optionSelected]="optionSelected"
+  [optionTerm]="optionTerm"
+>
+</app-add-option>
+
+<app-update-price
+  *ngIf="options.length > 0"
+  [productID]="productID"
+  [onModify]="onModify"
+  [options]="options"
+  [optionSelected]="optionSelected"
+  [optionTerm]="optionTerm"
+>
+</app-update-price>

@@ -1,0 +1,13 @@
+<div id="container">
+    <h1>ULTIMAS COMPRAS</h1>
+    <div class="items" *ngFor="let oap of oxpHtml" (click)="changeDisplay('myOrders', oap.order.id)">
+        <div id="dateCode">
+            <p>#{{oap.order.code}}</p>
+            <p>{{getDates(oap.order.orderDate)}}</p>
+        </div>
+        <div *ngFor="let product of oap.products">
+            <p>{{product.name}} x{{product.quantity}}</p>
+        </div>
+        <p>PRECIO TOTAL: {{oap.order.total}}</p>
+    </div>
+</div>

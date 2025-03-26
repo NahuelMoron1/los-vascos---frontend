@@ -1,0 +1,94 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+  align-items: center;
+  border: 1px solid rgb(202, 202, 202);
+  height: fit-content;
+  width: fit-content;
+  max-width: 100vh;
+  padding: 2vi;
+  margin: 2vi 0;
+  border-radius: 30px;
+  color: #cbcbcb;
+}
+.messages {
+  color: rgb(231, 79, 79);
+  font-family: sans-serif;
+  font-size: 12px;
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+}
+#align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input {
+  width: 46vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  height: 6vh;
+  background-color: rgb(235, 235, 235);
+  border-radius: 30px;
+  border: 0;
+}
+label {
+  width: 50vh;
+}
+input,
+label {
+  font-family: "globerBold";
+  letter-spacing: 1px;
+}
+#priceDiv,
+#sellerDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#login {
+  width: 50vh;
+  height: 7vh;
+  border: 0;
+  border-radius: 30px;
+  background-color: rgb(0, 170, 255);
+  color: white;
+  letter-spacing: 2px;
+  font-family: "real";
+  font-size: 12px;
+  cursor: pointer;
+  transition: transform 1s ease-in-out;
+}
+#login:hover {
+  transform: scale(1.05);
+}
+#loginMessage {
+  font-family: "globerBold";
+  font-weight: 800;
+  font-size: 25px;
+  letter-spacing: 1px;
+  color: rgb(0, 170, 255);
+}
+#dataText {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+#requirements {
+  width: 60vh;
+  gap: 0;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 9px;
+}
+#registered {
+  background-color: #abf7b1;
+  border: 1px solid rgb(214, 214, 214);
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 13px;
+  width: 40vh;
+  padding: 3vh 5vh;
+}

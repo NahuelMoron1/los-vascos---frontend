@@ -1,0 +1,85 @@
+<div class="optionData">
+  <div class="options">
+    <h2 style="text-align: center">OPCIONES</h2>
+    <div id="containerSelect">
+      <label for="select" id="labSelect"
+        >Seleccione la opción a modificar</label
+      >
+      <div class="form">
+        <div>
+          <label for="optionSearch" class="option-title">MEDIDA </label>
+          <input
+            id="optionSearchInp"
+            type="text"
+            [(ngModel)]="optionTerm"
+            (input)="updateSearchResults()"
+            placeholder="Busque la medida que desea"
+          />
+        </div>
+        <div id="optionContainer">
+          <div
+            class="optionsForSearch"
+            *ngFor="let option of optionsSearched"
+            (click)="selectOption(option.name)"
+          >
+            <p>{{ option.name.toUpperCase() }}</p>
+          </div>
+        </div>
+      </div>
+      <select
+        name=""
+        id=""
+        [(ngModel)]="optionTerm"
+        (change)="selectOption(optionTerm)"
+      >
+        <option *ngFor="let option of options" value="{{ option.name }}">
+          {{ option.name }}
+        </option>
+      </select>
+    </div>
+    <div class="option">
+      <div>
+        <label for="name">Opción</label>
+        <input
+          type="text"
+          name="name"
+          value="{{ optionSelected.name }}"
+          id="{{ optionSelected.id }}"
+        />
+      </div>
+      <div class="priceList">
+        <label for="modifyPrice1">Costo de producto</label>
+        <input
+          type="number"
+          name="modifyPrice1"
+          [value]="optionSelected.price"
+          id="modifyCostPriceInp"
+        />
+      </div>
+      <div class="priceList">
+        <label for="modifyPrice1">Stock</label>
+        <input
+          type="number"
+          name="stockInpName"
+          [value]="optionSelected.stock"
+          id="modifyStockInp"
+        />
+      </div>
+      <div class="priceList">
+        <label for="modifyID">ID</label>
+        <input
+          type="text"
+          name="idInpName"
+          [value]="optionSelected.id"
+          id="modifyIdInp"
+        />
+      </div>
+      <div id="buttons">
+        <button (click)="modifyOptions(optionSelected, 1)">Modificar</button>
+        <button id="delete" (click)="deleteOption(optionSelected)">
+          Eliminar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

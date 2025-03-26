@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.container {
+  height: fit-content;
+  padding: 2vi;
+  width: calc(35vi - 5vi);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: black;
+  color: #cbcbcb;
+}
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.order-header h2 {
+  margin: 0;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+}
+.order-header button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.section {
+  margin-bottom: 20px;
+}
+.section h3 {
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+.section p {
+  margin: 5px 0;
+}
+.contact-details p {
+  margin: 3px 0;
+}
+.order-summary {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+.order-summary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+.total {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .container {
+    width: calc(100vi - 4vi);
+    height: auto;
+  }
+}
+
+/* Mobile devices (landscape) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .container {
+    width: calc(100vi - 20px);
+    height: auto;
+  }
+}
+
+/* Mobile devices (portrait) */
+@media (max-width: 480px) and (min-width: 280px) {
+  .container {
+    width: calc(100vi - 20px);
+    height: auto;
+    padding: 10px;
+  }
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .order-header button {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+/* Very small devices (portrait) */
+@media (max-width: 279px) {
+  .container {
+    width: calc(100vi - 20px);
+    height: auto;
+    padding: 10px;
+  }
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .order-header button {
+    margin-top: 10px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,12 @@
+<div id="container">
+    <div class="form">
+        <p>Por favor, seleccione el cliente que aplica la compra</p>
+        <select name="brand" class="productInfo"  id="brandSelect" (change)="selectUser($event)" size="1">
+            <option *ngFor="let userAux of users" [value]="userAux.id" >{{userAux.username}}</option>
+        </select>
+    </div>
+
+    <div class="form">
+        <p>Al seleccionar un cliente para aplicar la compra está dando a entender que los productos sumados anteriormente en el carrito seran aplicados a la persona que usted seleccione.</p>
+    </div>
+</div>

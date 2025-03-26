@@ -1,0 +1,44 @@
+<div class="featureData">
+  <div class="features">
+    <h2 style="text-align: center">CARACTERISTICAS</h2>
+    <div *ngFor="let feature of features; let indice = index" class="feature">
+      <div>
+        <label for="name">Caracteristica</label>
+        <input
+          type="text"
+          class="productInfo"
+          name="name"
+          value="{{ feature.name }}"
+          id="{{ feature.name }}"
+        />
+      </div>
+      <div>
+        <label for="value">Valor</label>
+        <input
+          type="text"
+          class="productInfo"
+          name="value"
+          value="{{ feature.value }}"
+          id="{{ feature.value }}"
+        />
+      </div>
+      <div id="buttons">
+        <button (click)="modifyFeatures(feature, indice)">Modificar</button>
+        <button id="delete" (click)="deleteFeature(feature.id, indice)">
+          Eliminar
+        </button>
+      </div>
+    </div>
+    <div class="feature">
+      <div>
+        <label for="name">Caracteristica</label>
+        <input type="text" name="name" id="featureInp" />
+      </div>
+      <div>
+        <label for="value">Valor</label>
+        <input type="text" name="value" id="featureValueInp" />
+      </div>
+      <button (click)="addFeature()">Agregar</button>
+    </div>
+  </div>
+</div>

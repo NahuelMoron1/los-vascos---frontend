@@ -1,0 +1,15 @@
+<div id="container">
+  <input
+    type="text"
+    name="search"
+    id="searchbarInp"
+    [(ngModel)]="searchTerm"
+    placeholder="Qué estas buscando?"
+  />
+  <i
+    (click)="updateSearchResults()"
+    style="color: white"
+    class="fa fa-search fa-1x"
+    aria-hidden="true"
+  ></i>
+</div>

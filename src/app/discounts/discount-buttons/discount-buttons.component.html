@@ -1,0 +1,79 @@
+<div id="align">
+  <div id="selectBy" class="containers">
+    <label for="changeButton"
+      >Seleccione una opción para actualizar los precios</label
+    >
+    <button
+      (click)="selectByBrand()"
+      class="changeBy"
+      id="byBrand"
+      [ngClass]="{ active: onBrand }"
+    >
+      Por marca
+    </button>
+    <button
+      (click)="selectByCategory()"
+      class="changeBy"
+      id="byCategory"
+      [ngClass]="{ active: onCategory }"
+    >
+      Por categoría
+    </button>
+  </div>
+  <div id="container" class="containers">
+    <div id="form">
+      <label for="percentage">Ingrese el porcentaje de cambio</label>
+      <br />
+      <input type="number" name="percentage" id="discountInp" /><span> %</span>
+    </div>
+
+    <div id="brandSelection" *ngIf="onBrand && !onCategory">
+      <label for="percentage"
+        >Seleccione la marca a la que va a aplicar un cambio de precio</label
+      >
+      <br />
+      <select name="brand" id="brandSelect" (change)="selectBrand($event)">
+        <option *ngFor="let brand of brands" value="{{ brand.name }}">
+          {{ brand.name }}
+        </option>
+      </select>
+    </div>
+
+    <div id="categorySelection" *ngIf="onCategory && !onBrand">
+      <label for="percentageCategory"
+        >Seleccione la categoria a la que va a aplicar un cambio de
+        precio</label
+      >
+      <br />
+      <select
+        name="category"
+        id="categorySelect"
+        (change)="selectCategory($event)"
+      >
+        <option *ngFor="let category of categories" [value]="category.name">
+          {{ category.name }}
+        </option>
+      </select>
+    </div>
+
+    <div id="buttons">
+      <button id="increase" class="changePrice" (click)="setDiscount()">
+        Agregar Descuento
+      </button>
+      <button id="decrease" class="changePrice" (click)="deleteDiscounts()">
+        Eliminar Descuento
+      </button>
+    </div>
+  </div>
+  <div id="messages">
+    <p *ngIf="progress > 0">
+      <i
+        class="fa fa-spinner"
+        id="spinner"
+        *ngIf="progress < 100"
+        aria-hidden="true"
+      ></i>
+      Cambiando Precios | {{ progress.toFixed(1) }}%
+    </p>
+  </div>
+</div>

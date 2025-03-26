@@ -1,0 +1,59 @@
+ul {
+  display: grid;
+}
+a,
+h2 {
+  text-decoration: none;
+  font-family: "Posterama 1919 W01 SemiBold";
+  text-transform: uppercase;
+  color: #ffffff;
+}
+#tresbeimg {
+  width: 25vh;
+  height: auto;
+}
+#container {
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  padding-left: 1vi;
+  padding-right: 1vi;
+  width: calc(100% - 2vi);
+  height: 250px;
+  position: relative;
+  bottom: 0;
+}
+.followList,
+.contactList,
+.mapList {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 1vh;
+  :is(div) {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+}
+.contactList {
+  gap: 2vh;
+}
+.social {
+  color: white;
+}
+@media (min-width: 1200px) {
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+}
+@media (min-width: 481px) and (max-width: 767px) {
+}
+@media (max-width: 480px) and (min-width: 280px) {
+  #container {
+    font-size: 12px;
+    display: grid;
+    height: fit-content;
+    padding-bottom: 2vh;
+  }
+}
+@media (max-width: 279px) {
+}

@@ -1,0 +1,32 @@
+body {
+  margin-top: 16.5vi;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10vh;
+  margin-left: 10vh;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .details {
+    display: grid;
+    justify-content: center;
+    row-gap: 2vh;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .details {
+    display: grid;
+    justify-content: center;
+    row-gap: 2vh;
+  }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+  .details {
+    display: grid;
+    justify-content: center;
+    row-gap: 2vh;
+  }
+}
+@media (max-width: 279px) {
+}

@@ -1,0 +1,48 @@
+<body>
+    <div class="container">
+        <div class="auth-section">
+          <div class="auth-option">
+            <div class="auth-info">
+              <div class="fa fa-envelope-o fa-2x"></div>
+              <div class="dataInfo">
+                <h3>Dirección De Email</h3>
+                <p>{{user.email}}</p>
+              </div>
+            </div>
+            <button class="enable-btn">Cambiar</button>
+          </div>
+          <div class="auth-option">
+            <div class="auth-info">
+              <div class="fa fa-user fa-2x"></div>
+              <div class="dataInfo">
+                <h3>Nombre de usuario</h3>
+                <p>{{user.username}}</p>
+              </div>
+            </div>
+            <button class="enable-btn">Cambiar</button>
+          </div>
+          <div class="auth-option">
+            <div class="auth-info">
+              <div class="fa fa-eye-slash fa-2x"></div>
+              <div class="dataInfo">
+                <h3>Contraseña</h3>
+                <input type="password" name="" id="" value="user.password" readonly>
+              </div>
+            </div>
+            <button class="reset-btn">Cambiar</button>
+          </div>
+        </div>
+    
+        <div class="device-management">
+          <h3>Información de envios</h3>
+          <button class="manage-btn" (click)="changeDisplay('shipment')">Verificar</button>
+        </div>
+    
+        <div class="account-activity">
+          <h3>Account Activity</h3>
+          <p>Last signed in</p>
+          <p class="suspicious-activity">Suspicious account activity? <a href="#">Deactivate Account</a></p>
+          <button class="more-btn">More</button>
+        </div>
+      </div>
+</body>

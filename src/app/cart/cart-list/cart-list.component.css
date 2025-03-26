@@ -1,0 +1,172 @@
+.cart {
+  background-color: rgb(35, 57, 67);
+  color: white;
+  width: 100vh;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding-left: 8vh;
+  padding-right: 8vh;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  min-height: 48vh;
+  font-family: sans-serif;
+}
+
+table {
+  width: 100vh;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+thead th {
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+tbody td {
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  vertical-align: middle;
+  max-width: 25vi;
+}
+
+img {
+  width: 10vh;
+  max-height: 15vh;
+  margin-right: 1vh;
+}
+
+.product-info {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.quantity-btn,
+.remove-btn {
+  background-color: #007500;
+  color: #fff;
+  border: none;
+  width: 4.5vh;
+  height: 4vh;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 1s;
+}
+
+.quantity-btn:hover,
+.remove-btn:hover {
+  background-color: #005700;
+}
+
+#decrement,
+.remove-btn {
+  background-color: #e13933;
+  transition: background-color 1s;
+}
+
+#decrement:hover,
+.remove-btn:hover {
+  background-color: #c2302b;
+}
+
+#productName,
+#price {
+  font-family: "globerBold";
+}
+#productCategory {
+  font-family: "globerBold";
+  font-size: 12px;
+}
+#productName {
+  max-width: 40vh;
+}
+.quantityInp {
+  width: 3vi;
+  max-width: 3vi;
+  height: 2vi;
+  border: 0;
+  text-align: center;
+  background: none;
+  color: white;
+  border: 1px solid rgb(239, 239, 239);
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .cart {
+    width: 80%;
+    padding-left: 5vh;
+    padding-right: 5vh;
+  }
+  table {
+    width: 100%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .cart {
+    width: 90vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  table {
+    width: 90vw;
+  }
+  img {
+    width: 8vh;
+    max-height: 12vh;
+  }
+  .quantity-btn,
+  .remove-btn {
+    width: 8vh;
+    height: 5vh;
+  }
+}
+
+@media (max-width: 480px) and (min-width: 280px) {
+  .cart {
+    width: 94vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    font-size: 12px;
+  }
+  table {
+    width: 96vw;
+  }
+  img {
+    width: 5vh;
+    max-height: 10vh;
+  }
+  .quantity-btn,
+  .remove-btn {
+    width: 3.5vh;
+    height: 3vh;
+  }
+  .quantityInp {
+    min-width: 5vh;
+    min-height: 2vh;
+  }
+}
+
+@media (max-width: 279px) {
+  .cart {
+    width: 100vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  table {
+    width: 100vw;
+  }
+  img {
+    width: 5vh;
+    max-height: 8vh;
+  }
+  .quantity-btn,
+  .remove-btn {
+    width: 3vh;
+    height: 2.5vh;
+  }
+}

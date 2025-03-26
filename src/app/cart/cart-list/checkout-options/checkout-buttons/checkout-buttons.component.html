@@ -1,0 +1,17 @@
+<p id="messageCode">Si tenes un codigo de descuento, por favor ingresalo aqui:</p>
+<div id="container">
+    <div id="discount">
+        <input type="text" name="promoCode" id="couponInp" placeholder="Por favor ingrese el codigo de descuento">
+        <button (click)="applyCoupon()">Aplicar Descuento</button>
+        <p id="applied" *ngIf="applied">Descuento aplicado con exito</p>
+        <p id="used" *ngIf="used">Error al aplicar descuento, ya utilizaste este cupón</p>
+        <p id="notfound" *ngIf="notfound">Cupon no encontrado</p>
+        <p id="expired" *ngIf="expired">El cupon expiró</p>
+        <p id="minimum" *ngIf="minimum">El minimo de compra para este cupon es de ${{couponSearched.minimum}}</p>
+
+    </div>
+    <div id="buttons">
+        <button (click)="verifyOrders()">Comprar</button>
+        <button [routerLink]="['/products']" id="keepWatching">Continuar Viendo</button>
+    </div>
+</div>

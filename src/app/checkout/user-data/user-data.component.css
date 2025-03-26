@@ -1,0 +1,78 @@
+#container {
+  color: #cbcbcb;
+  border: 1px solid #cbcbcb;
+  padding-top: 1vh;
+  padding-bottom: 5vh;
+  padding-left: 5vh;
+  padding-right: 5vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  min-height: 80vh;
+}
+#orderMessage {
+  font-family: "globerBold";
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+#cartDetail {
+  padding: 3vh;
+}
+table {
+  width: 60vh;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-family: "globerBold";
+}
+
+thead th {
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+tbody td {
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  vertical-align: middle;
+}
+.product-info {
+  display: flex;
+  gap: 10px;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  #container {
+    width: 64%;
+    margin: 0;
+  }
+  table {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  #container {
+    width: 64%;
+    margin: 0;
+  }
+  table {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+  #container {
+    width: 64%;
+    margin: 0;
+  }
+  table {
+    width: 100%;
+    margin: 0;
+  }
+  tbody {
+    font-size: 10px;
+  }
+  thead {
+    font-size: 12px;
+  }
+}
+@media (max-width: 279px) {
+}

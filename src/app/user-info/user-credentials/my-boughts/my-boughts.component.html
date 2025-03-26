@@ -1,0 +1,70 @@
+<main class="profile" *ngIf="selectedOrder.code != ''">
+  <p *ngIf="isAdmin()">Estas viendo una orden del usuario: {{selectedOrder.username}}</p>
+    <section class="profile-header">
+      <div class="profile-info">
+        <h1>#{{selectedOrder.code}}</h1>
+        <p>{{getDates(selectedOrder.orderDate)}}</p>
+        <p>$ {{formatNumber(selectedOrder.total)}}</p>
+        <p *ngIf="!(selectedOrder.payed) && !(user.client) && !isAdmin()">Transferencia pendiente</p>
+        <p *ngIf="selectedOrder.description != ''">{{selectedOrder.description}}</p>
+      </div>
+    </section>
+    <section class="personal-info">
+      <h2>Información de la orden</h2>
+      <div class="info-row" *ngFor="let product of selectedProducts">
+        <span>{{product.name}} {{product.optionSelected}}</span>
+        <span>x{{product.quantity}}</span>
+      </div>
+    </section>
+    <section class="address-info">
+      <h2>Dirección de envio</h2>
+      <div class="info-row">
+        <span>País</span>
+        <span>{{userdata.country}}</span>
+      </div>
+      <div class="info-row">
+        <span>Provincia</span>
+        <span>{{userdata.province}}</span>
+      </div>
+      <div class="info-row">
+        <span>Ciudad/Estado</span>
+        <span>{{userdata.city}}</span>
+      </div>
+      <div class="info-row">
+        <span>Calle</span>
+        <span>{{userdata.street}} {{userdata.streetNumb}}</span>
+      </div>
+      <div class="info-row">
+        <span>Orden Registrada</span>
+        <span *ngIf="selectedOrder.attended">Si</span>
+        <span *ngIf="!selectedOrder.attended">No</span>
+      </div>
+      <div class="info-row">
+        <span>Orden Pagada</span>
+        <span *ngIf="selectedOrder.payed">Si</span>
+        <span *ngIf="!selectedOrder.payed">No</span>
+      </div>
+    </section>
+
+    <div id="buttonsUser">
+      <button style="cursor: auto;" *ngIf="!isAdmin() && selectedOrder.attended">Tu orden ya fue registrada!</button>
+      <button id="deleteButton" *ngIf="isAdmin()" (click)="deleteUserOrder(selectedOrder.code)">Eliminar</button>
+      <button *ngIf="isAdmin() && !selectedOrder.attended" (click)="confirmAttend('attend')" id="registerOrder">Orden Registrada</button>
+      <button id="noRegisterButton" *ngIf="isAdmin() && selectedOrder.attended" (click)="confirmAttend('unattend')">No está registrada</button>
+      <button id="payedButton" *ngIf="isAdmin() && selectedOrder.attended && !selectedOrder.payed" (click)="confirmPayment('payed')">Orden Pagada</button>
+      <button id="notPayedButton" *ngIf="isAdmin() && selectedOrder.attended && selectedOrder.payed" (click)="confirmPayment('notPayed')">No está pagada</button>
+      <button id="mofifyButton" *ngIf="isAdmin()" routerLink="/modify/order/{{selectedOrder.id}}">Modificar</button>
+      <!--<button *ngIf="!(user.client) && !(selectedOrder.payed) && !isAdmin()">Ya hice la transferencia</button>!-->
+    </div>
+  </main>
+  <div id="containerNoOrders" *ngIf="selectedOrder.code == ''">
+    <div id="noOrders">
+      <i class="fa fa-exclamation-circle fa-5x" aria-hidden="true"></i>
+      <p>En este apartado vas a encontrar el detalle de la orden que selecciones</p>
+
+      <div id="select">
+        <p>Seleccioná una orden </p> 
+        <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,55 @@
+GET https://apis.datos.gob.ar/georef/api/provincias
+###
+GET http://localhost:3000/api/products
+###
+###
+DELETE http://localhost:3000/api/products/aa
+###
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+    "id": "",
+    "name": "Autoperforantes",
+    "category": "Herramientas",
+    "price": 500,
+    "image": "",
+    "stock": 100,
+    "description": "autoperforantes tel"
+}
+###
+POST http://localhost:3000/api/operations
+Content-Type: application/json
+
+{
+    "fuelAmount": 1200,
+    "fuelPrice": 1100,
+    "actualDate": "2024-04-09",
+    "type": "venta",
+    "totalPrice": 1320000,
+    "profit": 120000
+}
+
+###
+PATCH http://localhost:3000/api/products/5e5730c8-178f-11ef-a6ce-dd2b3fbae759
+Content-Type: application/json
+
+{
+    "stock": 199
+}
+###
+PATCH http://localhost:3000/api/operations/2
+Content-Type: application/json
+
+{
+    "actualDate": "2024-10-15"
+}
+###
+GET http://localhost:3000/api/savedOp
+###
+POST http://localhost:3000/api/savedOp
+Content-Type: application/json
+
+{
+    "idSelected": 4
+}

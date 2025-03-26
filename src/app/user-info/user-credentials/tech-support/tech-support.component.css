@@ -1,0 +1,185 @@
+#container {
+    font-family: Arial, sans-serif;
+    background-color: #fbe3d5;
+    padding: 0px 5vi;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    width: calc(70vi - 40px);
+    height: 44.7vi;
+}
+h1{
+    font-family: 'globerBold';
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+.contact-form {
+    background-color: #fff;
+    padding: 2vi 5vi;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 100%; /* Asegura que el formulario no exceda el ancho máximo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2vi;
+    row-gap: 1vi;
+    margin-left: 0;
+}
+
+.contact-form fieldset {
+    grid-column: span 2;
+    border: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.contact-form legend {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="number"],
+.contact-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .comments-group {
+    grid-column: span 2;
+}
+
+.contact-form .consent-group {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contact-form .consent-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.contact-form .consent-group label {
+    margin: 0; /* Elimina cualquier margen adicional que pueda estar causando problemas */
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+.contact-form .send-button {
+    grid-column: span 2;
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-end;
+    justify-self: end;
+}
+
+.contact-form .send-button:hover {
+    background-color: #600000;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    #container{
+        height: fit-content;
+        width: calc(100vi - 10vi);
+    }
+    .contact-form {
+        padding: 2vi 4vi;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    #container{
+        height: 80vh;
+        width: calc(100vi - 10vi);
+    }
+    .contact-form {
+        padding: 1.5vi 3vi;
+        grid-template-columns: 1fr;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form input[type="number"],
+    .contact-form textarea {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1em;
+        width: 90%;
+    }
+    .contact-form .send-button {
+        grid-column: span 1;
+        justify-self: center;
+    }
+}
+
+@media (max-width: 480px) and (min-width: 280px) {
+    #container {
+        padding: 0px 3vi;
+        width: calc(100% - 6vi);
+        height: 90vh;
+    }
+    .contact-form {
+        padding: 1vi 2vi;
+        grid-template-columns: 1fr;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form input[type="number"],
+    .contact-form textarea {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1em;
+        width: 85%;
+    }
+    .contact-form .send-button {
+        grid-column: span 1;
+        justify-self: center;
+    }
+}
+
+@media (max-width: 279px) {
+    #container {
+        padding: 0px 2vi;
+        width: calc(100vi - 10px);
+        height: auto;
+    }
+    .contact-form {
+        padding: 0.5vi 1vi;
+        grid-template-columns: 1fr;
+    }
+    .contact-form .send-button {
+        grid-column: span 1;
+        justify-self: center;
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto | Los Vascos</title>
+  </head>
+  <app-nav-bar-extended></app-nav-bar-extended>
+  <body>
+    <app-poster-info></app-poster-info>
+    <div id="container">
+      <div id="dataContact">
+        <p>Los Vascos - Distribucion-Centro de venta</p>
+        <a href="" class="data"
+          ><i class="fa fa-whatsapp" aria-hidden="true"></i> +54 9 223
+          583-5445</a
+        >
+        <a href="" class="data">
+          <i class="fa fa-whatsapp" aria-hidden="true"></i> +54 9 223
+          583-5445</a
+        >
+        <a href="" class="data"
+          ><i class="fa fa-envelope-o" aria-hidden="true"></i>
+          nahuelarielmoron1gmail.com</a
+        >
+        <a class="data"
+          ><i class="fa fa-map-marker" aria-hidden="true"></i> Gonzalez Guerrico
+          622, Mar Del Plata, Buenos Aires</a
+        >
+        <img src="assets/losvascos.png" alt="" />
+      </div>
+
+      <div id="formContact">
+        <label for="name">Nombre *</label>
+        <input
+          type="text"
+          name="name"
+          id="nameInp"
+          placeholder="ej: Juan Perez"
+        />
+
+        <label for="email">Email *</label>
+        <input
+          type="email"
+          name="email"
+          id="emailInp"
+          placeholder="ej: tuemail@gmail.com"
+        />
+
+        <label for="phone">Telefono *</label>
+        <input
+          type="number"
+          name="phone"
+          id="phoneInp"
+          placeholder="ej: 2231234567"
+        />
+
+        <label for="message">Mensaje *</label>
+        <input
+          type="text"
+          name="message"
+          id="messageInp"
+          placeholder="ej: Tu mensaje"
+        />
+
+        <button (click)="sendMessage()">Enviar</button>
+        <span *ngIf="error" id="problem"
+          >Hubo un problema al mandar el mensaje. Por favor, intenta
+          nuevamente.</span
+        >
+        <span *ngIf="sent"
+          >Gracias por contactarte, te estaremos respondiendo lo antes
+          posible.</span
+        >
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+<label for="image">Ingrese su comprobante de pago por transferencia</label>
+<input type="file" name="image" id="voucherInp" (change)="selectImage($event)">
+<button (click)="sendData()">enviar</button>
+<img src="{{imgURL}}" alt="">
+
+<img src="{{image}}" alt="">

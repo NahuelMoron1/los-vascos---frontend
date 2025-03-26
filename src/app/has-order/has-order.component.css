@@ -1,0 +1,30 @@
+body{
+    margin-top: 75px;
+}
+#container{
+    display: flex;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+    #container{
+        display: grid;
+        row-gap: 2vh;
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+    #container{
+        display: grid;
+        row-gap: 2vh;
+    }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+    #container{
+        display: grid;
+        row-gap: 2vh;
+    }
+}
+@media (max-width: 279px) {
+    #container{
+        display: grid;
+        row-gap: 2vh;
+    }
+}

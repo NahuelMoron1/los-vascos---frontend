@@ -1,0 +1,67 @@
+<div class="cart">
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Eliminar</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; let indice = index">
+        <td>
+          <img [src]="bffUrl + product.image" draggable="false" />
+          <div class="product-info">
+            <p id="productName">
+              {{ product.name }} {{ product.optionSelected }}
+            </p>
+            <p id="productCategory">Categoria: {{ product.category }}</p>
+          </div>
+        </td>
+        <td>
+          <button
+            class="quantity-btn"
+            (click)="incrementQuantity(product, indice)"
+          >
+            +
+          </button>
+          <input
+            type="number"
+            name="quantity"
+            class="quantityInp"
+            id="{{ product.id }}"
+            (input)="changeQuantity(product)"
+            [disabled]="true"
+            value="{{ product.quantity }}"
+          />
+          <button
+            class="quantity-btn"
+            id="decrement"
+            (click)="decrementQuantity(product, indice)"
+          >
+            -
+          </button>
+        </td>
+        <td>
+          <button class="remove-btn" (click)="deleteProduct(indice)">x</button>
+        </td>
+        <td id="price" *ngIf="product.discount == 0">
+          {{ product.price | currency : "" : "symbol" : "1.2-2" }}
+        </td>
+        <td id="priceDiscount" *ngIf="product.discount > 0">
+          $ {{ product.priceDiscount | currency : "" : "symbol" : "1.2-2" }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-checkout-options></app-checkout-options>
+  <app-checkout-buttons></app-checkout-buttons>
+  <p style="font-family: Arial, Helvetica, sans-serif; font-size: 12px">
+    Recordá que si modificas un producto del carrito de compras el cupón de
+    descuento se borra por seguridad, si tenes un cupon de descuento revisá
+    antes de apretar el boton de comprar para verificar si el descuento está
+    aplicado
+  </p>
+</div>

@@ -1,0 +1,33 @@
+
+<div class="timeline">
+    <div class="timeline-item">
+        <i id="checkReserved" class="fa fa-check-circle fa-3x" aria-hidden="true" [ngClass]="{'confirmed': reserved, 'not-confirmed': !reserved}"></i>
+        <div class="timeline-content">
+            <h3>ORDEN RESERVADA</h3>
+        </div>
+    </div>
+    <div class="timeline-item">
+        <i id="checkComprobante" class="fa fa-check-circle fa-3x" aria-hidden="true" [ngStyle]="{'color': 'rgb(224, 224, 224)'}" [ngClass]="{'confirmed': comprobante}"></i>
+        <div class="timeline-content">
+            <h3>COMPROBANTE ENVIADO</h3>
+        </div>
+    </div>
+    <div class="timeline-item">
+        <i id="checkConfirmed" class="fa fa-check-circle fa-3x" aria-hidden="true" [ngStyle]="{'color': 'rgb(224, 224, 224)'}"></i>
+        <div class="timeline-content">
+            <h3>ORDEN CONFIRMADA</h3>
+        </div>
+    </div>
+    <div class="timeline-item">
+        <i id="checkPrep" class="fa fa-check-circle fa-3x" aria-hidden="true" [ngStyle]="{'color': 'rgb(224, 224, 224)'}"></i>
+        <div class="timeline-content">
+            <h3>EN PREPARACIÓN</h3>
+        </div>
+    </div>
+    <div class="timeline-item">
+        <i id="checkSent" class="fa fa-check-circle fa-3x" aria-hidden="true" [ngStyle]="{'color': 'rgb(224, 224, 224)'}"></i>
+        <div class="timeline-content">
+            <h3>ORDEN ENVIADA</h3>
+        </div>
+    </div>
+</div>

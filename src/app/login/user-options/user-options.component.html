@@ -1,0 +1,6 @@
+<div id="container">
+    <p *ngIf="component == 'login'" [routerLink]="['/signup']">Todavia no tenes cuenta?</p>
+    <p *ngIf="component == 'login'" [routerLink]="['/login/recover']">Olvidé la contraseña</p>
+
+    <p *ngIf="component == 'signup'" [routerLink]="['/login']">Ya tengo una cuenta</p>
+</div>

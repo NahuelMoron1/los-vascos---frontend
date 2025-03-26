@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="order-header">
+    <h2>DETALLE DE LA ORDEN<br />#{{ order.code }}</h2>
+  </div>
+  <div class="section">
+    <h3>
+      <i class="fa fa-map-marker" aria-hidden="true"></i> DIRECCIÓN DE LA
+      EMPRESA
+    </h3>
+    <p>Chacabuco 6311</p>
+    <p>Mar Del Plata, CP 7600</p>
+    <p>Buenos Aires, Argentina</p>
+  </div>
+  <div class="section">
+    <h3>
+      <i class="fa fa-map-marker" aria-hidden="true"></i> DIRECCIÓN DE
+      FACTURACIÓN
+    </h3>
+    <p>{{ userdata.street }} {{ userdata.streetNumb }}</p>
+    <p>{{ userdata.city }}, {{ userdata.province }}, {{ userdata.country }}</p>
+  </div>
+  <div class="section contact-details">
+    <h3>DETALLES DE CONTACTO</h3>
+    <p>
+      <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      info.losvascosdistribucion&#64;gmail.com
+    </p>
+    <p>
+      <i class="fa fa-phone-square" aria-hidden="true"></i> 54 9 2262 30 6960
+    </p>
+    <p>
+      <i class="fa fa-phone-square" aria-hidden="true"></i> 54 9 2262 30 6960
+    </p>
+  </div>
+  <div class="section order-summary">
+    <h3>
+      RESUMEN DE LA ORDEN ({{ products.length }})
+      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    </h3>
+    <p>
+      <span>Sub Total</span><span>${{ order.subtotal }}</span>
+    </p>
+    <p>
+      <span> <i class="fa fa-truck" aria-hidden="true"></i> Envío</span
+      ><span>${{ order.delivery }}</span>
+    </p>
+    <p class="total">
+      <span>Total</span><span>${{ order.total }}</span>
+    </p>
+  </div>
+  <app-buttons-detail></app-buttons-detail>
+</div>

@@ -1,0 +1,36 @@
+<div id="container">
+  <div id="bankData">
+    <p>
+      Al hacer click en realizar pedido, aguardá a que se complete la operación
+    </p>
+    <p>
+      Con el pedido ya realizado, te vamos a notificar cuando tomemos el pedido
+    </p>
+    <p>Gracias por elegirnos!</p>
+    <img
+      src="assets/losvascos.png"
+      style="width: 200px; background-color: red"
+      alt=""
+    />
+    <!--<p>
+      Los Vascos Distribución - Centro De Venta
+      <i class="fa fa-registered" aria-hidden="true"></i>
+    </p>-->
+
+    <div id="form">
+      <label for="description">Ingrese comentarios de la compra</label>
+      <textarea
+        id="descriptionInp"
+        name="comentarios"
+        rows="4"
+        cols="50"
+        placeholder="Escribí especificaciones acá..."
+      ></textarea>
+    </div>
+  </div>
+  <button *ngIf="!creating" (click)="placeOrder()">Realizar pedido</button>
+  <button *ngIf="creating">
+    <i class="fa fa-spinner" id="spinner" aria-hidden="true"></i> Realizando
+    pedido
+  </button>
+</div>

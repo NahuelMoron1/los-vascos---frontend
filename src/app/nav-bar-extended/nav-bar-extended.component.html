@@ -1,0 +1,21 @@
+<div id="container">
+  <button
+    *ngIf="isMobile"
+    (click)="toggleVisibility()"
+    style="background: none"
+    class="toggle-btn"
+  >
+    <img style="width: 50%" src="../../assets/To Do.gif" alt="" />
+  </button>
+  <img
+    style="width: 40%"
+    src="../../assets/losvascos.png"
+    alt=""
+    *ngIf="isMobile && isHidden"
+  />
+  <div id="container2" [ngClass]="{ hidden: isHidden }">
+    <app-swiper [ngClass]="{ 'hide-swiper': !isAtTop }"></app-swiper>
+    <app-up-bar></app-up-bar>
+    <app-nav-bar></app-nav-bar>
+  </div>
+</div>

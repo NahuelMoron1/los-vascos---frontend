@@ -1,0 +1,31 @@
+#container {
+  width: fit-content;
+  height: 3vi; /* Ajuste de la altura para que coincida con el botón */
+  padding: 0 1vi;
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  border: 1px solid #ffffff; /* Agregar borde para mejor visualización */
+  border-radius: 2px; /* Bordes redondeados */
+}
+
+input {
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  #container {
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 2vh;
+  }
+
+  input {
+    width: 80%;
+  }
+}

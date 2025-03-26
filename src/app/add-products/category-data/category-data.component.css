@@ -1,0 +1,191 @@
+/* Estilos generales */
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #000000, #000000);
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  gap: 2vi;
+  padding-top: 2vi;
+  padding-bottom: 2vi;
+  overflow: hidden;
+  position: relative;
+  font-family: sans-serif;
+}
+#subcategoriesMenu {
+  display: flex;
+  flex-direction: column;
+}
+
+#accesibilities {
+  z-index: 1;
+}
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 0;
+}
+
+body::before {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  right: -200px;
+}
+
+body::after {
+  width: 800px;
+  height: 800px;
+  bottom: -300px;
+  left: -300px;
+  z-index: 0;
+}
+
+.alerts {
+  display: flex;
+  gap: 10px;
+  width: 20vi;
+  padding: 2vi;
+  text-align: center;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 1vi;
+}
+#added {
+  background-color: rgb(142, 243, 142);
+}
+
+#modified,
+#optionModified {
+  background-color: rgb(241, 243, 142);
+}
+
+/* Contenedor principal */
+#container {
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 40px;
+  max-width: 800px;
+  width: 100%;
+  transition: transform 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+/* Título principal */
+#container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #343a40;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: sans-serif;
+}
+/* Estilo para los datos */
+.data {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Estilo para los contenedores de texto */
+.dataText,
+#prices {
+  width: 48%;
+}
+
+/* Estilo para etiquetas y entradas */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+.image-preview-container {
+  width: 200px; /* Tamaño del contenedor de la imagen */
+  height: 200px;
+  border: 1px dashed #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer; /* Cambia el cursor al estilo "pointer" */
+  overflow: hidden; /* Oculta contenido que exceda los límites */
+  background-color: #f9f9f9;
+}
+
+.image-preview-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Mantiene la proporción de la imagen */
+}
+
+.image-placeholder {
+  color: #999;
+  font-size: 14px;
+  text-align: center;
+}
+button {
+  width: 50%;
+  margin-top: 2vi;
+  padding: 15px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.5s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+#selectsub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2vh;
+}
+.subButton {
+  margin: 0;
+  padding: 0.5vh;
+  font-size: 12px;
+  width: 10vh;
+}
+select {
+  margin: 0;
+  padding: 1vh;
+}

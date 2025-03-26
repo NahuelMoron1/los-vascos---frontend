@@ -1,0 +1,38 @@
+#container{
+    background-color: #f0f0f5;
+    width: 30.5vi;
+    height: 43vi;
+    padding: 2vi;
+    padding-top: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+h1{
+    letter-spacing: 2px;
+    text-align: center;
+}
+.items{
+    padding-left: 3vi;
+    padding-right: 3vi;
+    padding-top: 1vi;
+    padding-bottom: 2vi;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(214, 214, 214);
+    margin-bottom: 10px;
+    min-height: 9.5vi;
+    max-height: 9.5vi;
+    font-size: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 1s ease;
+}
+.items:hover{
+    transform: scale(1.05);
+}
+#dateCode{
+    margin-bottom: -10px;
+    display: flex;
+    justify-content: space-between;
+}

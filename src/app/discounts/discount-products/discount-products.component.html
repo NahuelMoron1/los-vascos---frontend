@@ -1,0 +1,10 @@
+<app-loading *ngIf="loading"></app-loading>
+<div id="containsProducts" *ngIf="!loading">
+    <div class="products" *ngFor="let product of products">
+        <p>{{product.name}}</p>
+        <p>{{product.brand}}</p>
+        <p>{{product.category}}</p>
+        <p *ngIf="product.discount > 0">Tiene descuento</p>
+        <p *ngIf="product.discount > 0">Descuento: {{product.discount}}</p>
+    </div>
+</div>

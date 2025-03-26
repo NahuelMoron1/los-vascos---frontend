@@ -1,0 +1,17 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Posterama 1919 W01 SemiBold';
+    align-items: center;
+    background-color: rgb(10, 10, 10);
+    color: white;
+    padding: 2vi;
+}
+h1{
+    letter-spacing: 2px;
+}
+p{
+    font-size: 15px;
+    text-align: center;
+}

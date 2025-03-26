@@ -1,0 +1,89 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 40vi;
+  padding: 20px;
+  height: calc(45vi - 40px);
+  max-height: calc(45vi - 40px);
+  overflow-x: auto;
+  overflow-y: auto;
+  color: white;
+}
+p {
+  color: red;
+}
+#form {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  letter-spacing: 2px;
+}
+
+#form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #cbcbcb;
+}
+
+#form input[type="text"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333333;
+  box-sizing: border-box;
+}
+
+#form input[type="text"]:focus {
+  border-color: #007500;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#form input[type="text"]::placeholder {
+  color: #cbcbcb;
+}
+button {
+  color: #007500;
+  background: linear-gradient(90deg, #007500 50%, #ffffff 50%);
+  background-size: 200%;
+  background-position: right;
+  border: 1px solid #007500;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.8s, background-position 0.8s ease;
+}
+
+button:hover {
+  color: white;
+  background-position: left;
+}
+#couponList {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#couponList h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#couponList p {
+  padding: 10px;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  color: #cbcbcb;
+}
+
+#couponList p:last-child {
+  border-bottom: none; /* Elimina el borde del último elemento */
+}
+.expired {
+  color: red;
+}

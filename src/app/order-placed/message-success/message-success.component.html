@@ -1,0 +1,25 @@
+<div id="container">
+  <i id="check" class="fa fa-check-circle fa-5x" aria-hidden="true"></i>
+
+  <h1>RESERVASTE TU ORDEN</h1>
+  <p id="mailSent">
+    Te enviamos un mail con la confirmación de la reserva a {{ user.email }}
+  </p>
+
+  <p>Te vamos a notificar por email cuando estemos preparando tu pedido</p>
+
+  <div id="bankData">
+    <p>LOS VASCOS DISTRIBUCIÓN-CENTRO DE VENTA</p>
+    <p>TELÉFONO +54 9 2262 30 6960</p>
+    <p>JUAN PEDRO ARANO</p>
+    <p>DNI: xxxxxxxx</p>
+  </div>
+
+  <p>
+    Mientras preparamos tu pedido, ponete en contacto con nosotros para
+    coordinar el pago de la orden
+  </p>
+  <p>Muchas gracias por comprar en Los Vascos!</p>
+
+  <app-order-progress *ngIf="!user.client"></app-order-progress>
+</div>

@@ -1,0 +1,30 @@
+<body>
+    <div id="container">
+        <div id="info">
+            <h2>CUPONES DE DESCUENTO</h2>
+            <p *ngIf="modified">Cupon modificado</p>
+        </div>
+        <div id="form">
+            <label for="couponName">Ingrese el codigo del cupon</label>
+            <input type="text" name="couponName" [value]="modify ? getValue('code'): ''" [disabled]="modify && !modificate" id="couponNameInp">
+    
+            <label for="couponPrice">Ingrese el precio de descuento del cupon</label>
+            <input type="number" name="couponPrice" [value]="modify ? getValue('price') : ''" [disabled]="modify && !modificate" id="couponPriceInp">
+    
+            <label for="couponMin">Ingrese el minimo de compra del cupon</label>
+            <input type="text" name="couponMin" [value]="modify ? getValue('minimum') : ''" [disabled]="modify && !modificate" id="couponMinInp">
+    
+            <label for="couponExp">Ingrese la fecha de expiración del cupon (DD/MM/AAAA)</label>
+            <input type="date" name="couponExp" [value]="modify ? getValue('expires') : ''" [disabled]="modify && !modificate" id="couponExpInp">
+        </div>
+        <div id="buttons">
+            <button *ngIf="!modify" (click)="createCoupon()">Crear</button>
+            <button *ngIf="modify && !modificate" (click)="modificate = true">Modificar</button>
+            <button *ngIf="modify && modificate" (click)="modifyCoupon()">Guardar</button>
+            <button *ngIf="modify" (click)="deleteCoupon()" [routerLink]="['/user']">Eliminar</button>
+        </div>
+        <div id="messages">
+            <p *ngIf="saved">Cupon creado con éxito</p>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,127 @@
+<h1>Detalles de envío</h1>
+<div id="container">
+  <div class="form">
+    <label for="firstName">Nombre</label>
+    <input
+      type="text"
+      name="firstName"
+      id="firstNameInp"
+      class="shipmentInput"
+      value="{{ getValue('firstname') }}"
+    />
+  </div>
+
+  <div class="form">
+    <label for="lastName">Apellido</label>
+    <input
+      type="text"
+      name="lastName"
+      id="lastNameInp"
+      class="shipmentInput"
+      value="{{ getValue('lastname') }}"
+    />
+  </div>
+
+  <div class="form">
+    <label for="company">Empresa (opcional)</label>
+    <input
+      type="text"
+      name="company"
+      id="companyInp"
+      class="shipmentInput"
+      value="{{ getValue('company') }}"
+    />
+  </div>
+
+  <div class="form">
+    <label for="phone">Teléfono</label>
+    <input
+      type="text"
+      name="phone"
+      id="phoneInp"
+      class="shipmentInput"
+      value="{{ getValue('phone') }}"
+    />
+  </div>
+
+  <div class="form">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      name="email"
+      id="emailInp"
+      class="shipmentInput"
+      value="{{ getValue('email') }}"
+    />
+  </div>
+
+  <div class="form">
+    <label for="country">País</label>
+    <select class="shipmentInput" id="options">
+      <option id="countryOption" [value]="">{{ Country }}</option>
+    </select>
+  </div>
+
+  <div class="form">
+    <label for="province">Provincia</label>
+    <select
+      [(ngModel)]="provinciaSeleccionada"
+      class="shipmentInput"
+      id="options"
+      (change)="onProvinceChange()"
+    >
+      <option *ngIf="userdata?.email != ''">{{ getValue("province") }}</option>
+      <option *ngFor="let province of provinces" [value]="">
+        {{ province.nombre }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form">
+    <label for="city">Ciudad</label>
+    <input
+      id="cityInp"
+      class="shipmentInput"
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="updateSearchResults()"
+      value="{{ getValue('city') }}"
+    />
+    <div id="cityContainer">
+      <div
+        class="cityData"
+        *ngFor="let city of cities"
+        (click)="selectOption(city.nombre)"
+      >
+        <p>{{ city.nombre.toUpperCase() }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="form">
+    <label for="street">Calle</label>
+    <input
+      type="text"
+      name="street"
+      id="streetInp"
+      class="shipmentInput"
+      value="{{ getValue('street') }}"
+    />
+  </div>
+
+  <div class="form">
+    <label for="streetNum">Numero</label>
+    <input
+      type="text"
+      name="streetNum"
+      id="streetNumInp"
+      class="shipmentInput"
+      value="{{ getValue('streetNumb') }}"
+    />
+  </div>
+
+  <button *ngIf="!dataCreated" (click)="createUserData()">Guardar datos</button>
+  <button *ngIf="dataCreated" (click)="deleteUserData()">
+    Modificar datos
+  </button>
+</div>

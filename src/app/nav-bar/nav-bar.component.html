@@ -1,0 +1,47 @@
+<link
+  href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css?family=Lato"
+  rel="stylesheet"
+  type="text/css"
+/>
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+</head>
+<div class="navBar" [class.open]="!isHidden">
+  <a href="/">Inicio</a>
+  <a routerLink="/products">Productos</a>
+  <ul id="containerUL">
+    <li class="dropdown">
+      <a href="/products">Buscar por categoría</a>
+      <ul class="submenu">
+        <li *ngFor="let category of categories">
+          <a href="/categories/{{ category.name }}">{{ category.name }}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <ul>
+    <li class="dropdown">
+      <a href="/products">Buscar por marca</a>
+      <ul class="submenu">
+        <li *ngFor="let brand of brands">
+          <a href="/products/brands/{{ brand.name }}">{{ brand.name }}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <!--<a routerLink="/company">Nosotros</a>-->
+  <a routerLink="/contactus">Contacto</a>
+  <p class="point" routerLink="/cart" class="fa fa-shopping-cart cartLength">
+    <span
+      style="font-family: Arial, Helvetica, sans-serif; margin-left: 0.5vh"
+      >{{ products.length }}</span
+    >
+  </p>
+</div>

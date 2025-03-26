@@ -1,0 +1,125 @@
+<body>
+  <div id="added" class="alerts" *ngIf="added">
+    <i class="fa fa-check-circle fa-3x" aria-hidden="true"></i>
+    <p>Producto cargado con exito</p>
+  </div>
+  <div id="modified" class="alerts" *ngIf="modified && !toModify">
+    <i class="fa fa-check-circle fa-3x" aria-hidden="true"></i>
+    <p>Producto modificado con exito</p>
+  </div>
+  <div id="optionModified" class="alerts" *ngIf="optionUpdated">
+    <i class="fa fa-check-circle fa-3x" aria-hidden="true"></i> Opción del
+    producto modificada
+  </div>
+  <div id="container">
+    <h1>CARGA DE PRODUCTOS</h1>
+    <div class="data">
+      <div class="dataText">
+        <label for="name">Nombre de Producto *</label>
+        <input
+          type="text"
+          class="productInfo"
+          name="name"
+          [value]="getValue('name')"
+          id="nameInp"
+        />
+
+        <label for="category">Categoría *</label>
+        <select
+          name="category"
+          class="productInfo"
+          [(ngModel)]="category"
+          id="categorySelect"
+          (change)="changeCategory($event, true)"
+        >
+          <option *ngFor="let category of categories" [value]="category.name">
+            {{ category.name }}
+          </option>
+        </select>
+
+        <label for="stock">Subcategoría</label>
+        <select
+          name="subcategory"
+          class="productInfo"
+          [(ngModel)]="subcategoryName"
+          id="subcategorySelect"
+          (change)="changeSubcategory($event)"
+        >
+          <option
+            *ngFor="let subcategory of subcategories"
+            [value]="subcategory.name"
+          >
+            {{ subcategory.name }}
+          </option>
+        </select>
+
+        <label for="image">Imagen *</label>
+        <div class="image-preview-container" (click)="triggerFileInput()">
+          <img
+            *ngIf="imagePreview; else placeholder"
+            [src]="imagePreview"
+            alt="Vista previa de la imagen"
+          />
+          <ng-template #placeholder>
+            <div class="image-placeholder">Haz clic para cargar una imagen</div>
+          </ng-template>
+          <input
+            type="file"
+            #fileInput
+            accept="image/*"
+            (change)="onFileSelected($event)"
+            hidden
+          />
+        </div>
+      </div>
+      <div id="prices">
+        <label for="brand">Marca *</label>
+
+        <select
+          name="brand"
+          class="productInfo"
+          [(ngModel)]="brand"
+          id="brandSelect"
+          (change)="changeBrand($event)"
+        >
+          <option *ngFor="let brand of brands" [value]="brand.name">
+            {{ brand.name }}
+          </option>
+        </select>
+
+        <label for="discount">Descuento (En porcentaje, ejemplo 0.05)</label>
+        <input
+          type="number"
+          name="discount"
+          class="productInfo"
+          [value]="getValue('discount')"
+          id="discountInp"
+        />
+
+        <label for="description">Descripción</label>
+        <input
+          type="text"
+          name="description"
+          class="productInfo"
+          [value]="getValue('description')"
+          id="descriptionInp"
+        />
+
+        <button *ngIf="!onModify" (click)="addNewProduct()">AGREGAR</button>
+        <button *ngIf="onModify && !toModify" (click)="modify()">
+          MODIFICAR
+        </button>
+        <button *ngIf="toModify" (click)="modifyOneProduct()">CAMBIAR</button>
+      </div>
+    </div>
+  </div>
+  <app-product-accesibilities
+    id="accesibilities"
+    *ngIf="onModify"
+    [onModify]="onModify"
+    [options]="options!"
+    [optionSelected]="optionSelected"
+    [optionTerm]="optionTerm!"
+    [productID]="productID!"
+  ></app-product-accesibilities>
+</body>

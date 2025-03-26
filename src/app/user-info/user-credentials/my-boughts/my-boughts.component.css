@@ -1,0 +1,260 @@
+.profile {
+  width: 40vi;
+  padding: 20px !important;
+  height: fit-content;
+  max-height: 42vi;
+  overflow: auto !important;
+  color: #cbcbcb;
+}
+
+.profile-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid #ccc !important;
+  padding-bottom: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+.profile-picture {
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50% !important;
+  margin-right: 20px !important;
+}
+
+.profile-info h1 {
+  margin-bottom: 10px !important;
+}
+
+.profile-info p {
+  margin-bottom: 5px !important;
+  color: #cbcbcb !important;
+}
+
+.edit-button {
+  background-color: #007bff !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 5px !important;
+  padding: 10px 20px !important;
+  cursor: pointer !important;
+}
+
+.personal-info,
+.address-info {
+  margin-bottom: 20px !important;
+}
+
+.personal-info h2,
+.address-info h2 {
+  margin-bottom: 20px !important;
+  font-size: 1.2em !important;
+}
+
+.info-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  margin-bottom: 10px !important;
+}
+
+.info-row span {
+  font-size: 1em !important;
+  color: #cbcbcb !important;
+}
+
+#containerNoOrders {
+  width: 40vi !important;
+  padding: 20px !important;
+  height: 42vi !important;
+  display: flex !important;
+  justify-content: center !important;
+  font-family: sans-serif !important;
+}
+
+#noOrders {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-content: center !important;
+  p {
+    width: 50% !important;
+  }
+}
+#select {
+  display: flex !important;
+  gap: 10px !important;
+  p {
+    width: 100% !important;
+  }
+}
+button {
+  color: white !important;
+  border: none !important;
+  border-radius: 5px !important;
+  padding: 10px 20px !important;
+  cursor: pointer !important;
+}
+#buttonsUser {
+  display: flex !important;
+  gap: 10px !important;
+}
+.btn-success {
+  background-color: rgb(110, 166, 110) !important;
+}
+#deleteButton,
+#registerOrder,
+#noRegisterButton {
+  background-color: #4d7e98;
+}
+#payedButton,
+#notPayedButton,
+#mofifyButton {
+  background-color: #a4bb43;
+}
+/* Tablets (portrait and landscape) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .profile {
+    width: 50vi;
+    padding: 15px;
+  }
+  .profile-picture {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+  }
+  .profile-info h1 {
+    font-size: 1.5em;
+  }
+  .profile-info p {
+    font-size: 0.9em;
+  }
+  .edit-button {
+    padding: 8px 16px;
+  }
+  .personal-info h2,
+  .address-info h2 {
+    font-size: 1em;
+  }
+  #containerNoOrders {
+    width: 60vi;
+    height: auto;
+  }
+  #noOrders p {
+    width: 60%;
+  }
+  #select p {
+    width: auto;
+  }
+}
+
+/* Mobile devices (landscape) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .profile {
+    width: 80vi;
+    padding: 10px;
+  }
+  .profile-picture {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+  }
+  .profile-info h1 {
+    font-size: 1.2em;
+  }
+  .profile-info p {
+    font-size: 0.8em;
+  }
+  .edit-button {
+    padding: 8px 16px;
+  }
+  .personal-info h2,
+  .address-info h2 {
+    font-size: 0.9em;
+  }
+  #containerNoOrders {
+    width: 80vi;
+    height: auto;
+  }
+  #noOrders p {
+    width: 70%;
+  }
+  #select p {
+    width: auto;
+  }
+}
+
+/* Mobile devices (portrait) */
+@media (max-width: 480px) and (min-width: 280px) {
+  .profile {
+    width: 90vi;
+    padding: 8px;
+    height: fit-content;
+    max-height: 100vh;
+  }
+  .profile-picture {
+    width: 60px;
+    height: 60px;
+    margin-right: 5px;
+  }
+  .profile-info h1 {
+    font-size: 1em;
+  }
+  .profile-info p {
+    font-size: 0.7em;
+  }
+  .edit-button {
+    padding: 6px 12px;
+  }
+  .personal-info h2,
+  .address-info h2 {
+    font-size: 0.8em;
+  }
+  #containerNoOrders {
+    width: 90vi;
+    height: auto;
+  }
+  #noOrders p {
+    width: 80%;
+  }
+  #select p {
+    width: auto;
+  }
+}
+
+/* Very small devices (portrait) */
+@media (max-width: 279px) {
+  .profile {
+    width: 100%;
+    padding: 5px;
+  }
+  .profile-picture {
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+  }
+  .profile-info h1 {
+    font-size: 0.9em;
+  }
+  .profile-info p {
+    font-size: 0.6em;
+  }
+  .edit-button {
+    padding: 5px 10px;
+  }
+  .personal-info h2,
+  .address-info h2 {
+    font-size: 0.7em;
+  }
+  #containerNoOrders {
+    width: 100%;
+    height: auto;
+  }
+  #noOrders p {
+    width: 90%;
+  }
+  #select p {
+    width: auto;
+  }
+}

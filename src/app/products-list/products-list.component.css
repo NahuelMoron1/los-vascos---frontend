@@ -1,0 +1,208 @@
+body {
+  background-color: black;
+  margin-top: 16.5vi;
+}
+#containsAll {
+  display: flex;
+  justify-content: center;
+}
+#container,
+#noProducts {
+  margin-top: 2%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  justify-items: center;
+  margin-bottom: 2%;
+  width: 100%;
+  max-height: fit-content;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+#noProducts {
+  align-items: center;
+}
+.priceTacched {
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px; /* Ajusta el grosor según tus necesidades */
+}
+#discounted {
+  font-size: 20px;
+}
+#product_item {
+  background-color: rgb(35, 57, 67);
+  color: white;
+  cursor: pointer;
+  align-items: center;
+  width: 50%;
+  border-radius: 5px;
+  height: fit-content;
+  padding: 0;
+  padding-bottom: 3vi;
+  text-align: center;
+  font-family: "globerBold";
+  margin-bottom: 2vi;
+  transition: transform 0.8s ease;
+  :is(h2) {
+    text-transform: uppercase;
+    font-family: "globerBold";
+    font-size: 15px;
+    padding-left: 2vi;
+    padding-right: 2vi;
+    text-align: center;
+    height: 3vi;
+  }
+  :is(img) {
+    width: 70%;
+    max-height: 200px;
+  }
+}
+#product_item:hover {
+  transform: scale(1.05);
+}
+#dataContainer {
+  border-top: 3px solid rgb(167, 167, 167);
+  width: 100%;
+  box-sizing: border-box;
+  height: fit-content;
+  padding-bottom: 3vi;
+}
+#ourProducts {
+  text-align: center;
+  font-family: "real";
+  font-style: italic;
+  font-size: 35px;
+}
+.buttonProducts {
+  z-index: 999;
+  background: none;
+  width: 130px;
+  padding: 5% 3%;
+  border: 1px solid rgb(41, 41, 41);
+  border: none;
+  font-size: 10px;
+  border-radius: 50px;
+  margin-bottom: 2%;
+  /*font-family: "Posterama 1919 W01 SemiBold";*/
+  text-transform: uppercase;
+  font-weight: 800;
+  transition: transform 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+  cursor: pointer;
+  background-color: #4d7e98;
+  color: white;
+}
+.buttonProducts:hover {
+  transform: scale(1.05);
+  background-color: black;
+}
+#containerButtons {
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+}
+#watch {
+  color: white;
+  background: #a4bb43;
+}
+#watch:hover {
+  color: white;
+  background-color: rgb(29, 29, 29);
+}
+#addProduct {
+  color: rgb(231, 231, 231);
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  margin-top: 5%;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 20px;
+  height: 450px;
+  padding: 0;
+  text-align: center;
+  transition: transform 0.8s ease;
+  :is(p) {
+    font-size: 200px;
+  }
+}
+#addProduct:hover,
+#setDiscounts:hover {
+  transform: scale(1.07);
+}
+#setDiscounts {
+  background-color: white;
+  cursor: pointer;
+  width: 65%;
+  margin-top: 5%;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 20px;
+  height: 450px;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.8s ease;
+  font-family: sans-serif;
+}
+#prices {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+@media (min-width: 1200px) {
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  #container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #containerButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  #container {
+    grid-template-columns: repeat(1, 1fr);
+    height: max-content;
+  }
+  #containerButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+  #container {
+    grid-template-columns: repeat(1, 1fr);
+    height: max-content;
+  }
+  #containerButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  #product_item {
+    height: fit-content;
+    padding: 2vh;
+    #categoryP {
+      margin-top: 17%;
+    }
+  }
+}
+@media (max-width: 279px) {
+}
+@media (max-width: 768px) {
+  #containsAll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,10 @@
+body {
+  background-color: rgb(0, 0, 0);
+  margin-top: 16.5vi;
+}
+#cart {
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: sans-serif;
+  font-weight: 800;
+}

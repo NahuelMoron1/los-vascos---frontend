@@ -1,0 +1,145 @@
+#container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 75px - 250px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.profile {
+    width: 40vi !important;
+    padding: 20px !important;
+    height: fit-content !important;
+    max-height: 42vi !important;
+    overflow: auto !important;
+  }
+  
+  .profile-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    border-bottom: 1px solid #ccc !important;
+    padding-bottom: 20px !important;
+    margin-bottom: 20px !important; 
+  }
+  
+  .profile-picture {
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 50% !important;
+    margin-right: 20px !important;
+  }
+  
+  .profile-info h1 {
+    margin-bottom: 10px !important;
+  }
+  
+  .profile-info p {
+    margin-bottom: 5px !important;
+    color: #666 !important;
+  }
+  
+  .edit-button {
+    background-color: #007bff !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    padding: 10px 20px !important;
+    cursor: pointer !important;
+  }
+  
+  .personal-info, .address-info {
+    margin-bottom: 20px !important;
+  }
+  
+  .personal-info h2, .address-info h2 {
+    margin-bottom: 20px !important;
+    font-size: 1.2em !important;
+  }
+  
+  .info-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .info-row span {
+    font-size: 1em !important;
+    color: #333!important;
+  }
+
+  #containerNoOrders{
+    width: 40vi !important;
+    padding: 20px !important;
+    height: 42vi !important;
+    display: flex !important;
+    justify-content: center !important;
+    font-family: sans-serif !important;
+  }
+
+  #noOrders{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-content: center !important;
+    p{
+      width: 50% !important;
+    }
+  }
+  #select{
+    display: flex !important;
+    gap: 10px !important;
+    p{
+      width: 100% !important;
+    }
+  }
+  button{
+    background-color: #4d7e98;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  #buttonsUser{
+    display: flex !important;
+    gap: 10px !important;
+  }
+  #registerOrder{
+    background-color: white !important;
+    color: black !important;
+    padding: 8px 18px !important;
+    border: 2px solid #007bff !important;
+  }
+  .btn-success{
+    background-color: rgb(0, 197, 0) !important;
+  }
+  #deleteButton{
+    background-color: #a4bb43;
+  }
+  .quantity-btn, .remove-btn {
+    background-color: #4d7e98;
+    color: #fff;
+    border: none;
+    width: 4.5vh;
+    height: 4vh;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 1s;
+  }
+  
+  .quantity-btn:hover, .remove-btn:hover {
+    background-color: #a4bb43;
+  }
+  #decrement, .remove-btn{
+    background-color: rgb(231, 231, 231);
+    color: black;
+    transition: background-color 1s;
+  }
+  #decrement:hover, .remove-btn:hover{
+    background-color: rgb(220, 220, 220);
+  }
+  #codeH1{
+    letter-spacing: 2px;
+  }

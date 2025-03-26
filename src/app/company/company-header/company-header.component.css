@@ -1,0 +1,24 @@
+#container{
+    padding: 0.5vi 2vi;
+    width: calc(50vi - 4vi);
+    background-color: #a4bb43;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.5px;
+    height: 65vh;
+}
+@media (min-width: 1200px) {}
+@media (min-width: 768px) and (max-width: 1199px) {}
+@media (min-width: 481px) and (max-width: 767px) {
+    #container{
+        width: calc(100vi - 4vi);
+        height: fit-content;
+    }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+    #container{
+        width: calc(100vi - 4vi);
+        height: fit-content;
+    }
+}
+@media (max-width: 279px) {}

@@ -1,0 +1,55 @@
+<main class="profile">
+    <section class="profile-header">
+      <img src="assets/profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+      <div class="profile-info">
+        <h1>{{user.username}} <i *ngIf="admin" id="admin" class="fa fa-plus-circle" aria-hidden="true"></i></h1>
+        <p>{{userdata.company}}</p>
+        <p>{{userdata.city}}, {{userdata.province}}, {{userdata.country}}</p>
+      </div>
+      <button routerLink="/user/{{user.id}}" class="edit-button">Editar</button>
+    </section>
+    <section class="personal-info">
+      <h2>Información Personal</h2>
+      <div class="info-row">
+        <span>Nombre</span>
+        <span>{{userdata.firstname}}</span>
+      </div>
+      <div class="info-row">
+        <span>Apellido</span>
+        <span>{{userdata.lastname}}</span>
+      </div>
+      <div class="info-row">
+        <span>Dirección de email</span>
+        <span>{{userdata.email}}</span>
+      </div>
+      <div class="info-row">
+        <span>Teléfono</span>
+        <span>{{userdata.phone}}</span>
+      </div>
+      <div class="info-row">
+        <span>Empresa</span>
+        <span>{{userdata.company}}</span>
+      </div>
+      <button class="edit-button" (click)="changeDisplay('shipment')">Editar</button>
+    </section>
+    <section class="address-info">
+      <h2>Dirección</h2>
+      <div class="info-row">
+        <span>País</span>
+        <span>{{userdata.country}}</span>
+      </div>
+      <div class="info-row">
+        <span>Provincia</span>
+        <span>{{userdata.province}}</span>
+      </div>
+      <div class="info-row">
+        <span>Ciudad/Estado</span>
+        <span>{{userdata.city}}</span>
+      </div>
+      <div class="info-row">
+        <span>Calle</span>
+        <span>{{userdata.street}} {{userdata.streetNumb}}</span>
+      </div>
+      <button class="edit-button" (click)="changeDisplay('shipment')">Editar</button>
+    </section>
+  </main>

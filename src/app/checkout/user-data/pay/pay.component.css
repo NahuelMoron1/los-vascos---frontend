@@ -1,0 +1,43 @@
+#container {
+  padding-left: 3vh;
+  padding-right: 3vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "globerBold";
+}
+#bankData {
+  text-align: center;
+  width: 100%;
+}
+button {
+  border: 0;
+  width: 25vh;
+  height: 5vh;
+  cursor: pointer;
+  background-color: #4d7e98;
+  color: white;
+  transition: transform 1s ease, background-color 1s;
+}
+button:hover {
+  transform: scale(1.07);
+  background-color: #a4bb43;
+}
+#spinner {
+  animation: spin 1s linear infinite;
+}
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1vh;
+  border: 0;
+  textarea {
+    padding: 1vi;
+    background-color: black;
+    color: #cbcbcb;
+  }
+}

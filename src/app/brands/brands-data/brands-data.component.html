@@ -1,0 +1,14 @@
+<h2>MARCAS</h2>
+<app-loading *ngIf="loading"></app-loading>
+<div id="container" *ngIf="!loading">
+  <div
+    id="brand-item"
+    *ngFor="let brand of brandsArray"
+    [ngStyle]="{ 'background-image': 'url(' + bffurl + brand.image + ')' }"
+  >
+    <div id="buttons">
+      <button routerLink="/modify/brand/{{ brand.id }}">Modificar</button>
+      <button id="delete" (click)="deleteBrand(brand.id)">Eliminar</button>
+    </div>
+  </div>
+</div>

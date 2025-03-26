@@ -1,0 +1,75 @@
+<body>
+  <div id="container">
+    <h1 *ngIf="isCategory">CARGA DE CATEGORIAS</h1>
+    <h1 *ngIf="isBrand">CARGA DE MARCAS</h1>
+    <div class="data">
+      <div class="dataText">
+        <label for="name" *ngIf="isCategory">Nombre de categoría *</label>
+        <label for="name" *ngIf="isBrand">Nombre de la marca *</label>
+        <input
+          type="text"
+          class="productInfo"
+          name="name"
+          [value]="getValue('name')"
+          id="nameInp"
+        />
+
+        <div id="subcategoriesMenu" *ngIf="subcategories?.length">
+          <label for="name" *ngIf="isCategory">Subcategorías *</label>
+          <div id="selectsub">
+            <select
+              name="brand"
+              class="productInfo"
+              [(ngModel)]="subcategoryName"
+              id="brandSelect"
+              [value]="subcategoryName"
+              (change)="changeSubcategory($event)"
+            >
+              <option
+                *ngFor="let subcategory of subcategories"
+                [value]="subcategory.name"
+              >
+                {{ subcategory.name }}
+              </option>
+            </select>
+
+            <button
+              class="subButton"
+              *ngIf="subcategoryName"
+              (click)="deleteSubcategory()"
+            >
+              Eliminar
+            </button>
+          </div>
+        </div>
+
+        <label for="image">Imagen *</label>
+        <div class="image-preview-container" (click)="triggerFileInput()">
+          <img
+            *ngIf="imagePreview; else placeholder"
+            [src]="imagePreview"
+            alt="Vista previa de la imagen"
+          />
+          <ng-template #placeholder>
+            <div class="image-placeholder">Haz clic para cargar una imagen</div>
+          </ng-template>
+          <input
+            type="file"
+            #fileInput
+            accept=".png, .jpg, .jpeg"
+            (change)="onFileSelected($event)"
+            hidden
+          />
+        </div>
+      </div>
+    </div>
+    <button *ngIf="!onModify" (click)="addNewElement()">AGREGAR</button>
+    <button *ngIf="onModify && !toModify" (click)="modify()">MODIFICAR</button>
+    <button *ngIf="toModify" (click)="modifyOneElement()">CAMBIAR</button>
+  </div>
+
+  <app-subcategories
+    *ngIf="onModify"
+    [categoryID]="elementID"
+  ></app-subcategories>
+</body>

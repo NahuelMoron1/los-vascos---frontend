@@ -1,0 +1,15 @@
+<div id="container">
+  <div id="present"><p>CATEGORÍAS</p></div>
+  <div id="allCategories">
+    <div
+      class="category-item"
+      *ngFor="let category of categories"
+      routerLink="/categories/{{ category.name }}"
+    >
+      <img src="{{ bffurl }}{{ category.image }}" alt="" />
+      <p>
+        {{ category.name.toUpperCase() }}
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div id="container">
+  <p>
+    <span><a href="/">Inicio</a></span>
+    <span *ngIf="methodSelected"
+      >> <a href="/products">{{ methodSelected }}</a></span
+    >
+    <span *ngIf="filterSelected">
+      > <a>{{ filterSelected }}</a></span
+    >
+    <span *ngIf="methodSelected3">
+      >
+      <a href="/categories/{{ filterSelected }}">{{ methodSelected3 }}</a></span
+    >
+    <span *ngIf="methodSelected3">
+      > <a href="">{{ subCategory }}</a></span
+    >
+    <span *ngIf="methodSelected2">
+      > <a href="/products">{{ methodSelected2 }}</a></span
+    >
+    <span *ngIf="filterSelected2">
+      > <a href="">{{ filterSelected2 }}</a></span
+    >
+  </p>
+</div>

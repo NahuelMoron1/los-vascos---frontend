@@ -1,0 +1,21 @@
+#container {
+  display: flex;
+  justify-content: space-between;
+  width: 60vh;
+}
+p {
+  color: rgb(0, 170, 255);
+  font-family: "globerBold";
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 1s ease, color 1s;
+}
+p:hover {
+  transform: scale(1.05);
+  color: black;
+}
+@media (max-width: 767px) {
+  #container {
+    width: 100%;
+  }
+}

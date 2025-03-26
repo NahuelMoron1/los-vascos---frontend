@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modificar Usuario | Los Vascos</title>
+  </head>
+  <body>
+    <app-nav-bar></app-nav-bar>
+    <div id="container">
+      <div id="form">
+        <label for="username">Nombre de usuario</label>
+        <input
+          type="text"
+          name="username"
+          id="usernameInp"
+          [value]="getValue('username')"
+          [disabled]="!toModify"
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="emailInp"
+          [value]="getValue('email')"
+          [disabled]="!toModify"
+        />
+
+        <label for="pass">Contraseña</label>
+        <div id="passDiv">
+          <input
+            type="password"
+            name="pass"
+            id="passInp"
+            [value]="getValue('password')"
+            [disabled]="!toModify"
+          />
+          <i
+            *ngIf="!viewPass"
+            (click)="changeViewPass()"
+            class="fa fa-eye-slash icon"
+            aria-hidden="true"
+          ></i>
+          <i
+            *ngIf="viewPass"
+            (click)="changeViewPass()"
+            class="fa fa-eye icon"
+            aria-hidden="true"
+          ></i>
+        </div>
+
+        <label for="client">Habilitado para compras</label>
+        <input
+          type="text"
+          name="client"
+          [value]="getValue('client') ? 'si' : 'no'"
+          id="clientInp"
+          [disabled]="!toModify"
+        />
+
+        <label for="seller">Vendedor</label>
+        <input
+          type="text"
+          name="seller"
+          [value]="getValue('seller')"
+          id="sellerInp"
+          [disabled]="!toModify"
+        />
+
+        <button *ngIf="!toModify" (click)="enable()">Cambiar</button>
+        <button *ngIf="toModify" (click)="modifyUser()">Guardar</button>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </body>
+</html>

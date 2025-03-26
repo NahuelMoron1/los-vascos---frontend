@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.auth-section {
+  margin-bottom: 20px;
+}
+
+.auth-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.auth-info {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.icon.google {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png");
+}
+
+.icon.sms {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Message_icon.png/512px-Message_icon.png");
+}
+
+.icon.email {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Circle-icons-mail.svg/512px-Circle-icons-mail.svg.png");
+}
+
+button {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.enable-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.reset-btn {
+  background-color: #f8f9fa;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.device-management,
+.account-activity {
+  margin-top: 20px;
+}
+
+.device-management h3,
+.account-activity h3 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.manage-btn,
+.more-btn {
+  background-color: #f8f9fa;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.suspicious-activity {
+  color: red;
+}
+
+.suspicious-activity a {
+  color: red;
+  text-decoration: none;
+}
+.dataInfo {
+  padding-left: 1vi;
+}

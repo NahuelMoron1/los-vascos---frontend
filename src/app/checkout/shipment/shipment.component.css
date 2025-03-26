@@ -1,0 +1,172 @@
+#container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  width: 60vh;
+  height: 60vh;
+  margin-left: 2vh;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  color: white;
+}
+h1 {
+  font-family: sans-serif;
+  letter-spacing: 2px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 25vh;
+}
+input,
+select {
+  width: 25vh;
+  height: 4vh;
+  border: 1px solid rgb(227, 227, 227);
+  border-radius: 5px;
+  color: white;
+  background: none;
+}
+button {
+  border: 0;
+  width: 25vh;
+  height: 5vh;
+  cursor: pointer;
+  background-color: #007500;
+  color: white;
+  transition: transform 1s ease, background-color 1s;
+}
+button:hover {
+  transform: scale(1.07);
+  background-color: #e13933;
+}
+#checked {
+  display: flex;
+  width: 35vh;
+  p {
+    margin-top: 0.3vh;
+    margin-left: 1vh;
+    font-family: sans-serif;
+    font-size: 13px;
+  }
+}
+
+#toggleButton {
+  width: 2vh;
+  height: 2vh;
+  cursor: pointer;
+}
+
+#toggleButton[data-checked="true"] {
+  background-color: green;
+  color: white;
+}
+
+#toggleButton[data-checked="false"] {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(219, 219, 219);
+  color: black;
+}
+#cityContainer {
+  background-color: white;
+  position: absolute;
+  margin-top: 7vh;
+  max-height: 15vh;
+  width: 25vh;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+.cityData {
+  margin: 0;
+  background-color: white;
+  border-bottom: 1px solid rgb(232, 232, 232);
+  font-family: sans-serif;
+  cursor: pointer;
+}
+.cityData:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  #container {
+    grid-template-columns: 1fr;
+    width: 50vh;
+    height: auto;
+  }
+  .form,
+  input,
+  select,
+  button {
+    width: 40vh;
+  }
+  #checked {
+    width: 40vh;
+  }
+  #cityContainer {
+    width: 40vh;
+  }
+}
+
+/* Mobile devices (landscape) */
+@media (min-width: 481px) and (max-width: 767px) {
+  #container {
+    grid-template-columns: 1fr;
+    width: 40vh;
+    height: auto;
+  }
+  .form,
+  input,
+  select,
+  button {
+    width: 35vh;
+  }
+  #checked {
+    width: 35vh;
+  }
+  #cityContainer {
+    width: 35vh;
+  }
+}
+
+/* Mobile devices (portrait) */
+@media (max-width: 480px) and (min-width: 280px) {
+  #container {
+    grid-template-columns: 1fr;
+    width: 30vh;
+    height: auto;
+  }
+  .form,
+  input,
+  select,
+  button {
+    width: 30vh;
+  }
+  #checked {
+    width: 30vh;
+  }
+  #cityContainer {
+    width: 30vh;
+  }
+}
+
+/* Very small devices (portrait) */
+@media (max-width: 279px) {
+  #container {
+    grid-template-columns: 1fr;
+    width: 25vh;
+    height: auto;
+  }
+  .form,
+  input,
+  select,
+  button {
+    width: 25vh;
+  }
+  #checked {
+    width: 25vh;
+  }
+  #cityContainer {
+    width: 25vh;
+  }
+}

@@ -1,0 +1,115 @@
+#container {
+  display: flex;
+  width: 100vh;
+  justify-content: space-between;
+}
+#buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+input {
+  width: 50vh;
+  height: 5vh;
+  border: 1px solid rgb(211, 211, 211);
+  padding-left: 2vh;
+  margin-right: 1vh;
+}
+button {
+  width: 17vh;
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+  height: 5vh;
+  border: 0;
+  cursor: pointer;
+  background-color: #007500;
+  color: white;
+  font-family: "globerBold";
+  text-align: center;
+  border-radius: 2px;
+  transition: transform 1s ease;
+}
+button:hover {
+  transform: scale(1.07);
+}
+#keepWatching {
+  background-color: #e13933;
+}
+p {
+  font-family: Arial, sans-serif;
+}
+#applied {
+  color: rgb(0, 192, 0);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+#used,
+#notfound,
+#expired,
+#minimum {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: red;
+}
+#messageCode {
+  font-size: 13px;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  #container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #discount {
+    margin-bottom: 2vh;
+    display: flex;
+    input {
+      width: 70%;
+    }
+    button {
+      font-size: 10px;
+    }
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  #container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #discount {
+    margin-bottom: 2vh;
+    display: flex;
+    input {
+      width: 70%;
+    }
+    button {
+      font-size: 10px;
+    }
+  }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+  #container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #discount {
+    margin-bottom: 2vh;
+    display: flex;
+    input {
+      width: 70%;
+    }
+    button {
+      font-size: 10px;
+    }
+  }
+}
+@media (max-width: 279px) {
+}

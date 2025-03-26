@@ -1,0 +1,49 @@
+#container {
+  position: fixed;
+  top: 0;
+  width: 100vi;
+  z-index: 999;
+  background-color: black;
+}
+app-swiper {
+  display: block;
+  width: 100%;
+  transition: margin-top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.hide-swiper {
+  margin-top: -50px; /* Mueve el swiper hacia arriba */
+  opacity: 0; /* Hace que desaparezca */
+  pointer-events: none; /* Evita que interfiera con elementos debajo */
+}
+.hidden {
+  display: none;
+}
+
+.toggle-btn {
+  top: 10px;
+  right: 10px;
+  background-color: #000000;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+  display: none; /* Oculto por defecto */
+}
+
+@media (max-width: 768px) {
+  app-swiper {
+    display: none;
+  }
+  #container {
+    position: relative;
+    padding: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .toggle-btn {
+    display: block; /* Solo se muestra en móviles */
+    position: absolute;
+  }
+}

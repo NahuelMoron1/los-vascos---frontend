@@ -1,0 +1,21 @@
+<div class="priceData" *ngIf="onModify">
+  <div class="pricesChange">
+    <h2 style="text-align: center">PRECIOS</h2>
+    <div class="pricesData">
+      <div id="form">
+        <label for="percentage">Ingrese el porcentaje de cambio</label>
+        <br />
+        <input type="number" name="percentage" id="percentageInp" />
+      </div>
+
+      <div id="buttons">
+        <button id="increase" class="changePrice" (click)="changePrices(true)">
+          Aumentar Precios
+        </button>
+        <button id="decrease" class="changePrice" (click)="changePrices(false)">
+          Disminuir Precios
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

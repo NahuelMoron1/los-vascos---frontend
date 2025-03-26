@@ -1,0 +1,95 @@
+<div class="menu">
+  <div class="menu-item categorias" (click)="toggleSubmenu(0)">
+    <span>CATEGORÍAS</span>
+    <span *ngIf="!submenuVisible[0]" class="arrow">&#x276F;</span>
+    <span *ngIf="submenuVisible[0]" class="arrow">&#9660;</span>
+  </div>
+  <div class="submenu" [ngClass]="{ active: submenuVisible[0] }">
+    <div
+      class="submenu-item"
+      *ngFor="let category of categories"
+      (click)="reloadCategory(category.name)"
+    >
+      {{ category.name }}
+    </div>
+  </div>
+
+  <div
+    *ngIf="onCategory"
+    class="menu-item categorias"
+    (click)="toggleSubmenu(7)"
+  >
+    <span>SUBCATEGORÍAS</span>
+    <span *ngIf="!submenuVisible[7]" class="arrow">&#x276F;</span>
+    <span *ngIf="submenuVisible[7]" class="arrow">&#9660;</span>
+  </div>
+  <div class="submenu" [ngClass]="{ active: submenuVisible[7] }">
+    <div
+      class="submenu-item"
+      *ngFor="let subcategory of subcategories"
+      (click)="searchBySubcategory(subcategory.name)"
+    >
+      {{ subcategory.name }}
+    </div>
+  </div>
+
+  <div class="menu-item" (click)="toggleSubmenu(1)">
+    MARCA <span *ngIf="!submenuVisible[1]" class="arrow">&#x276F;</span>
+    <span *ngIf="submenuVisible[1]" class="arrow">&#9660;</span>
+  </div>
+  <div class="submenu" [ngClass]="{ active: submenuVisible[1] }">
+    <div
+      class="submenu-item"
+      *ngFor="let brand of brands"
+      (click)="reloadBrand(brand.name)"
+    >
+      {{ brand.name }} ({{ countProducts("brand", brand.name) }})
+    </div>
+  </div>
+  <div class="menu-item" (click)="toggleSubmenu(2)">
+    COLOR <span *ngIf="!submenuVisible[2]" class="arrow">&#x276F;</span>
+    <span *ngIf="submenuVisible[2]" class="arrow">&#9660;</span>
+  </div>
+  <div class="menu-item" (click)="toggleSubmenu(3)">
+    CAPACIDAD <span *ngIf="!submenuVisible[3]" class="arrow">&#x276F;</span>
+    <span *ngIf="submenuVisible[3]" class="arrow">&#9660;</span>
+  </div>
+  <div class="menu-item" (click)="toggleSubmenu(4)">
+    ENVASE <span *ngIf="!submenuVisible[4]" class="arrow">&#x276F;</span>
+    <span *ngIf="submenuVisible[4]" class="arrow">&#9660;</span>
+  </div>
+  <div *ngIf="isAdmin()" class="menu-item" (click)="toggleSubmenu(5)">
+    AGREGAR <span *ngIf="!submenuVisible[5]" class="arrow">&#x276F;</span>
+    <span *ngIf="submenuVisible[5]" class="arrow">&#9660;</span>
+  </div>
+  <div
+    *ngIf="isAdmin()"
+    class="submenu"
+    [ngClass]="{ active: submenuVisible[5] }"
+  >
+    <div class="submenu-item" [routerLink]="['/add/product']">
+      NUEVO PRODUCTO
+    </div>
+    <div class="submenu-item" [routerLink]="['/add/brand']">NUEVA MARCA</div>
+    <div class="submenu-item" [routerLink]="['/add/category']">
+      NUEVA CATEGORIA
+    </div>
+    <!--<div class="submenu-item" [routerLink]="['/products/set/discounts']">
+      NUEVOS DESCUENTOS
+    </div>-->
+  </div>
+  <div *ngIf="isAdmin()" class="menu-item" (click)="toggleSubmenu(6)">
+    MODIFICAR / ELIMINAR
+    <span *ngIf="!submenuVisible[6]" class="arrow">&#x276F;</span>
+    <span *ngIf="submenuVisible[6]" class="arrow">&#9660;</span>
+  </div>
+  <div
+    *ngIf="isAdmin()"
+    class="submenu"
+    [ngClass]="{ active: submenuVisible[6] }"
+  >
+    <div class="submenu-item" routerLink="/brands">MARCA</div>
+    <div class="submenu-item" [routerLink]="['/categories']">CATEGORIA</div>
+    <!--<div class="submenu-item">DESCUENTOS</div>-->
+  </div>
+</div>

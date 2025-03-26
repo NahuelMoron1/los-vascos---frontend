@@ -1,0 +1,23 @@
+<div id="align">
+    <div id="container">
+        <i class="fa fa-sign-in fa-5x" id="loginIcon" aria-hidden="true"></i>
+        <p id="loginMessage">INICIAR SESIÓN</p>
+
+        <label for="email">Email</label>
+        <p *ngIf="incorrectEmail" class="messages" id="incorrectMail">Email no encontrado</p>
+        <input type="email" name="email" id="emailInp" (input)="incorrectEmail = false && incorrectPassword = false"
+            required placeholder="miEmail@gmail.com">
+
+        <label for="password">Contraseña</label>
+        <p *ngIf="somethingWrong != ''" class="messages" id="incorrectPass">{{somethingWrong}}</p>
+        <div id="passTerm">
+            <input type="password" name="password" id="passwordInp" (input)="incorrectPassword = false" (keydown.enter)="validateUser()" required> 
+            <i *ngIf="!viewPass" (click)="changeViewPass()" class="fa fa-eye-slash icon" aria-hidden="true"></i>
+            <i *ngIf="viewPass" (click)="changeViewPass()" class="fa fa-eye icon" aria-hidden="true"></i>
+        </div>
+
+        <button id="login" (click)="validateUser()">LOGIN</button>
+
+        <app-user-options></app-user-options>
+    </div>
+</div>

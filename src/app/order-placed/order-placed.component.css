@@ -1,0 +1,32 @@
+body {
+  margin-top: 16.5vi;
+}
+#container {
+  display: flex;
+  height: fit-content;
+  background-color: rgb(50, 191, 126);
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  #container {
+    display: grid;
+    row-gap: 2vh;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  #container {
+    display: grid;
+    row-gap: 2vh;
+  }
+}
+@media (max-width: 480px) and (min-width: 280px) {
+  #container {
+    display: grid;
+    row-gap: 2vh;
+  }
+}
+@media (max-width: 279px) {
+  #container {
+    display: grid;
+    row-gap: 2vh;
+  }
+}

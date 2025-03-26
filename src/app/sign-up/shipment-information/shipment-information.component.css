@@ -1,0 +1,93 @@
+#dataText{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    width: 60vh;
+    height: 60vh;
+    margin-left: 2vh;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 25vh;
+}
+input, select{
+    width: 25vh;
+    height: 4vh;
+    border: 1px solid rgb(227, 227, 227);
+    background: none;
+    background-color: rgb(255, 255, 255);
+}
+button{
+    border: 0;
+    width: 25vh;
+    height: 5vh;
+    cursor: pointer;
+    background-color: #002855;
+    color: white;
+    transition: transform 1s ease;
+}
+button:hover{
+    transform: scale(1.07);
+}
+#checked{
+    display: flex;
+    width: 35vh;
+    p{
+        margin-top: 0.3vh;
+        margin-left: 1vh;
+        font-family: sans-serif;
+        font-size: 13px;
+    }
+}
+
+#toggleButton {
+    width: 2vh;
+    height: 2vh;
+    cursor: pointer;
+  }
+  
+  #toggleButton[data-checked="true"] {
+    background-color: green;
+    color: white;
+  }
+  
+  #toggleButton[data-checked="false"] {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(219, 219, 219);
+    color: black;
+  }
+  #cityContainer{
+    background-color: white;
+    position: absolute;
+    margin-top: 7vh;
+    max-height: 15vh;
+    width: 25vh;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+  .cityData{
+    margin: 0;
+    background-color: white;
+    border-bottom: 1px solid rgb(232, 232, 232);
+    font-family: sans-serif;
+    cursor: pointer;
+  }
+  .cityData:hover{
+    background-color: rgb(240, 240, 240);
+  }
+  #registered{
+    width: 20vi;
+    padding-top: 2vi;
+    padding-bottom: 2vi;
+    text-align: center;
+    background-color: rgb(161, 223, 119);
+    font-family: sans-serif;
+    font-size: 13px;
+  }
+  #container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vi;
+  }

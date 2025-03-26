@@ -1,0 +1,24 @@
+#messages{
+    background-color: black;
+    padding-bottom: 0.01vi;
+    padding-top: 1vi;
+    display: flex;
+    justify-content: center;
+}
+.message{
+    display: flex;
+    gap: 10px;
+    width: 20vi;
+    padding: 2vi;
+    text-align: center;
+    align-items: center;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 1vi;
+}
+#added{
+    background-color: rgb(142, 243, 142);
+}
+#deleted{
+    background-color: rgb(241, 243, 142);
+}

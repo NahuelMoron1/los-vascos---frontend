@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <swiper-container slides-per-view="1" navigation="true" pagination="true" id="container" loop="false" autoplay="{ delay: 1000 }" css-mode="true" speed="1000">
+        <swiper-slide id="slide" *ngFor="let imagen of arraySwiper">
+            <img src="{{imagen}}" alt="">
+        </swiper-slide>
+    </swiper-container>
+</body>
+</html>

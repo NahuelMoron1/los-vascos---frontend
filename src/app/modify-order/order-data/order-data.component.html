@@ -1,0 +1,27 @@
+<div id="container">
+  <main class="profile" *ngIf="orderSelected.code != ''">
+    <p>Estas viendo una orden del usuario: {{orderSelected.username}}</p>
+    <section class="profile-header">
+      <div class="profile-info">
+        <h1 id="codeH1">#{{orderSelected.code}}</h1>
+        <p>{{getDates(orderSelected.orderDate)}}</p>
+        <p>$ {{formatNumber(orderSelected.total)}}</p>
+      </div>
+    </section>
+    <section class="personal-info">
+      <h2>Información de la orden</h2>
+      <div class="info-row" *ngFor="let product of cartProducts; let indice = index;">
+        <span>{{product.name}} {{product.optionSelected}}</span>
+        <div id="quantityDiv">
+          <button class="quantity-btn" id="decrement" (click)="decrementQuantity(product, indice)">-</button>
+          <span> x{{product.quantity}} </span>
+          <button class="quantity-btn" (click)="incrementQuantity(product, indice)">+</button>
+        </div>
+        <button *ngIf="!isOnDelete(product.id)" id="deleteButton" (click)="deleteProduct(product.id)">Eliminar</button>
+        <button *ngIf="isOnDelete(product.id)" (click)="cancelDelete(product.id)">Cancelar</button>
+      </div>
+      <p *ngIf="deleted">Tu orden será modificada cuando guardes los cambios</p>
+      <button (click)="modifyOrder()">Guardar Cambios</button>
+    </section>
+  </main>
+</div>

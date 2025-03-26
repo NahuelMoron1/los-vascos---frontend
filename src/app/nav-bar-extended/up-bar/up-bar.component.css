@@ -1,0 +1,22 @@
+#container {
+  display: flex;
+  height: 15vh;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 0 2vi;
+}
+#logo {
+  width: 15vi;
+}
+@media (max-width: 768px) {
+  #container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  #logo {
+    width: 50%;
+  }
+}
