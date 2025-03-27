@@ -35,16 +35,6 @@
         id="usernameInp"
       />
 
-      <div *ngIf="isAdmin()" id="sellerDiv">
-        <label for="seller">Vendedor</label>
-        <input
-          type="text"
-          name="seller"
-          [(ngModel)]="sellerTerm"
-          id="sellerInp"
-        />
-      </div>
-
       <label for="password"
         >Contraseña
         <span *ngIf="!passwordFormat" class="messages">

@@ -23,8 +23,6 @@ export class RegisterDataComponent implements OnInit {
   noUsername: boolean = false;
   userService = inject(UserService);
   dataCreated: boolean = false;
-  sellerTerm: string = '';
-  noSeller: boolean = false;
   admin: PublicUser = new PublicUser('', '', '', false);
   cookieService = inject(CookieService);
   waitSvc = inject(WaitService);
@@ -86,9 +84,6 @@ export class RegisterDataComponent implements OnInit {
     if (this.usernameTerm == '') {
       this.noUsername = true;
     }
-    if (this.sellerTerm == '') {
-      this.noSeller = true;
-    }
     if (
       this.searchTerm != '' &&
       this.passTerm != '' &&
@@ -101,6 +96,7 @@ export class RegisterDataComponent implements OnInit {
         this.getString('passwordInp'),
         this.getString('usernameInp')
       );
+      newUser.client = true;
       try {
         ///this.userService.saveUser(newUser).subscribe(() => {});
         await this.userService.saveUser(newUser).toPromise();

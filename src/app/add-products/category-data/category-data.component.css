@@ -21,6 +21,10 @@ body {
   display: flex;
   flex-direction: column;
 }
+#background {
+  display: flex;
+  column-gap: 10px;
+}
 
 #accesibilities {
   z-index: 1;

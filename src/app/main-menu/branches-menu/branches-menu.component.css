@@ -23,6 +23,11 @@
     }
   }
 }
+#imagediv {
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+}
 #present {
   width: 15svh;
   font-size: 20px;
@@ -46,6 +51,11 @@
     column-gap: 100px;
     row-gap: 25px;
     overflow: hidden;
+    .category-item {
+      width: fit-content;
+      min-width: 30vi;
+      max-width: 30vi;
+    }
   }
   #present {
     text-align: center;

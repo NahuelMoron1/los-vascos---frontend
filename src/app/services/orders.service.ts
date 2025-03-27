@@ -46,20 +46,6 @@ export class OrdersService {
       return false;
     }
   }
-  async searchSellerOrders(input: string) {
-    if (input != '') {
-      if (this.isAdmin()) {
-        let ordersSearched = await this.getSellerOrders(input);
-        this.orders = [];
-        this._orders.next(this.orders);
-        if (ordersSearched) {
-          this.orders = ordersSearched;
-          this._orders.next(this.orders);
-        }
-      }
-    }
-    return this._orders.asObservable();
-  }
   async searchOrders(input: string) {
     if (input != '') {
       if (!this.isAdmin()) {
@@ -179,18 +165,6 @@ export class OrdersService {
     }
   }
 
-  async getSellerOrders(input: string) {
-    try {
-      const data = await this.getOrdersBySeller(input).toPromise();
-      return data;
-    } catch (error) {
-      if (error instanceof Error) {
-        console.error('Error obteniendo datos:', error.message);
-      }
-      throw error; // Puedes manejar el error de acuerdo a tus necesidades
-    }
-  }
-
   async getSearchedOrdersUser(input: string) {
     try {
       const data = await this.getOrdersSearchedNotAdmin(
@@ -242,12 +216,6 @@ export class OrdersService {
   getOrdersAdmin() {
     let urlAux = this.myAppUrl + this.myApiUrl;
     return this.http.get<Order[]>(urlAux + 'admin/attended', {
-      withCredentials: true,
-    });
-  }
-  getOrdersBySeller(seller: string) {
-    let urlAux = this.myAppUrl + this.myApiUrl;
-    return this.http.get<Order[]>(urlAux + 'seller/' + seller, {
       withCredentials: true,
     });
   }

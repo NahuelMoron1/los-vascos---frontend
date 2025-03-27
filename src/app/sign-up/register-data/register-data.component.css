@@ -43,11 +43,6 @@ label {
   letter-spacing: 1px;
 }
 #priceDiv,
-#sellerDiv {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
 #login {
   width: 50vh;
   height: 7vh;

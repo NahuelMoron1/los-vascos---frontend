@@ -37,14 +37,14 @@ export class SelectUserComponent implements OnInit {
     this.cartService.getProducts().subscribe((products) => {
       this.products = products;
     });
-    if (this.isAdmin()) {
+    /*if (this.isAdmin()) {
       this.users = await this.userService.readUsersBySeller(
         this.admin.username
       );
       this.users.unshift(this.user);
       this.userSelected = this.user;
       localStorage.setItem('userSelected', JSON.stringify(this.userSelected));
-    }
+    }*/
   }
   isAdmin() {
     if (this.admin.email != '') {

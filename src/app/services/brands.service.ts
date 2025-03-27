@@ -85,12 +85,13 @@ export class BrandsService {
       withCredentials: true,
     });
   }
-  saveBrand(productAux: Brand): Observable<void> {
+  saveBrand(productAux: Brand, removeBackground: boolean): Observable<void> {
     const formData = new FormData();
     if (productAux.temporaryFile) {
       formData.append('file', productAux.temporaryFile);
     }
     formData.append('brand', JSON.stringify(productAux));
+    formData.append('removeBackground', JSON.stringify(removeBackground));
     return this.http.post<void>(`${this.myAppUrl}${this.myApiUrl}`, formData, {
       withCredentials: true,
     });

@@ -1,12 +1,6 @@
 <div id="container">
   <h1 *ngIf="!isAdmin()">ULTIMAS COMPRAS</h1>
   <h1 *ngIf="isAdmin()">PEDIDOS</h1>
-  <!--<div id="formAux" *ngIf="isAdmin()">
-        <label for="sellers">Vendedor</label>
-        <select name="seller" class="sellerInfo" [(ngModel)]="seller" id="sellerSelect" (change)="changeSeller($event)">
-            <option *ngFor="let sellerAux of sellers" [value]="sellerAux" >{{sellerAux}}</option>
-        </select>
-    </div>-->
   <div id="form">
     <label for="search">Buscá la orden que desees</label>
     <input

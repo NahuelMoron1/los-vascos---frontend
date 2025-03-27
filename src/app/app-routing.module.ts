@@ -139,7 +139,6 @@ const routes: Routes = [
   {
     path: 'signup/shipmentdata/:id',
     component: ShipmentInformationComponent,
-    canActivate: [loggedGuard, userdataGuard],
   },
   {
     path: 'products/set/discounts',

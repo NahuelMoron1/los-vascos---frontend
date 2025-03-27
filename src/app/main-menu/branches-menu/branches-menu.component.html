@@ -6,7 +6,9 @@
       *ngFor="let brand of brands"
       routerLink="/products/brands/{{ brand.name }}"
     >
-      <img src="{{ bffurl }}{{ brand.image }}" alt="" />
+      <div id="imagediv">
+        <img id="imgbrand" src="{{ bffurl }}{{ brand.image }}" alt="" />
+      </div>
       <p>
         {{ brand.name.toUpperCase() }}
       </p>

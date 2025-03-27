@@ -29,6 +29,11 @@
   font-style: bold;
   margin-right: 10svh;
 }
+#imagediv {
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+}
 @media (max-width: 768px) {
   #container {
     flex-direction: column;

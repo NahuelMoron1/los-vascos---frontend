@@ -232,14 +232,21 @@ export class CategoryDataComponent implements OnInit {
   async addNewElement() {
     this.waitService.displayWait(true);
     const element = this.getItemsElement();
+    let checked: boolean = false;
+    const checkedInp = document.getElementById(
+      'quitbackgroundInp'
+    ) as HTMLInputElement;
+    if (checkedInp) {
+      checked = checkedInp.checked;
+    }
     if (element) {
       if (this.isCategory && !this.isBrand && element instanceof Category) {
-        await this.categoriesService.saveCategory(element).toPromise();
+        await this.categoriesService.saveCategory(element, checked).toPromise();
         this.added = true; //Al estar en verdadero se activara el mensaje de producto cargado}
         this.waitService.displayWait(false);
         window.location.href = `/modify/category/${element?.id}`;
       } else if (this.isBrand && !this.isCategory && element instanceof Brand) {
-        await this.brandService.saveBrand(element).toPromise();
+        await this.brandService.saveBrand(element, checked).toPromise();
         this.added = true; //Al estar en verdadero se activara el mensaje de producto cargado}
         this.waitService.displayWait(false);
         window.location.href = `/modify/brand/${element?.id}`;

@@ -61,6 +61,10 @@
             hidden
           />
         </div>
+        <div id="background" *ngIf="(isCategory || isBrand) && !onModify">
+          <label for="quitbackground">Borrar fondo de la imágen</label>
+          <input type="checkbox" name="quitbackground" id="quitbackgroundInp" />
+        </div>
       </div>
     </div>
     <button *ngIf="!onModify" (click)="addNewElement()">AGREGAR</button>
@@ -69,7 +73,7 @@
   </div>
 
   <app-subcategories
-    *ngIf="onModify"
+    *ngIf="onModify && isCategory"
     [categoryID]="elementID"
   ></app-subcategories>
 </body>

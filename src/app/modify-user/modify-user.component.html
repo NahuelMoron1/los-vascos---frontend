@@ -59,15 +59,6 @@
           [disabled]="!toModify"
         />
 
-        <label for="seller">Vendedor</label>
-        <input
-          type="text"
-          name="seller"
-          [value]="getValue('seller')"
-          id="sellerInp"
-          [disabled]="!toModify"
-        />
-
         <button *ngIf="!toModify" (click)="enable()">Cambiar</button>
         <button *ngIf="toModify" (click)="modifyUser()">Guardar</button>
       </div>

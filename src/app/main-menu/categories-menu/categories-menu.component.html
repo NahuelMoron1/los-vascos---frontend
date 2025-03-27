@@ -6,7 +6,9 @@
       *ngFor="let category of categories"
       routerLink="/categories/{{ category.name }}"
     >
-      <img src="{{ bffurl }}{{ category.image }}" alt="" />
+      <div id="imagediv">
+        <img src="{{ bffurl }}{{ category.image }}" alt="" />
+      </div>
       <p>
         {{ category.name.toUpperCase() }}
       </p>

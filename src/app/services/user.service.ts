@@ -151,39 +151,6 @@ export class UserService {
     });
   }
 
-  ///GET USERS BY SELLER
-
-  async readUsersBySeller(seller: string) {
-    let usersAux = await this.getBySellerTC(seller);
-    let users: User[] = [];
-    if (usersAux) {
-      users = usersAux;
-    }
-    return users;
-  }
-
-  async getBySellerTC(seller: string) {
-    try {
-      let usersAux = await this.getUsersBySeller(seller).toPromise();
-      return usersAux;
-    } catch (error) {
-      if (error instanceof Error) {
-        console.error('Error obteniendo datos:', error.message);
-      }
-      return false;
-    }
-  }
-
-  getUsersBySeller(seller: string): Observable<User[]> {
-    let urlAux = this.myAppUrl + this.myApiUrl + 'seller/';
-    if (this.user.email == '') {
-      this.user.email = 'null';
-    }
-    return this.http.get<User[]>(urlAux + seller + '/' + this.user.email, {
-      withCredentials: true,
-    });
-  }
-
   ///GET USER BY NAME
 
   async readUserByName(name: string) {

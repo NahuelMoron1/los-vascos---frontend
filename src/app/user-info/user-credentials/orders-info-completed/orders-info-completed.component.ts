@@ -84,27 +84,4 @@ export class OrdersInfoCompletedComponent {
     });
     ///this.orderService.searchOrder(input);
   }
-  /*async changeSeller(event: Event) {
-    const selectedValue = (event.target as HTMLSelectElement).value;
-    this.seller = selectedValue;
-    if (this.seller == 'Todos') {
-      if (this.isAdmin()) {
-        (await this.oxpService.getProducts('admin', null)).subscribe(
-          (orders) => {
-            this.ordersAndProducts = orders;
-          }
-        );
-      } else {
-        (await this.oxpService.getProducts('all', null)).subscribe((orders) => {
-          this.ordersAndProducts = orders;
-        });
-      }
-    } else {
-      (await this.oxpService.getProducts('seller', this.seller)).subscribe(
-        (orders) => {
-          this.ordersAndProducts = orders;
-        }
-      );
-    }
-  }*/
 }

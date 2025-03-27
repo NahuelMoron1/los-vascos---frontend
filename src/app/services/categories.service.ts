@@ -108,12 +108,16 @@ export class CategoriesService {
       withCredentials: true,
     });
   }
-  saveCategory(categoryAux: Category): Observable<void> {
+  saveCategory(
+    categoryAux: Category,
+    removeBackground: boolean
+  ): Observable<void> {
     const formData = new FormData();
     if (categoryAux.temporaryFile) {
       formData.append('file', categoryAux.temporaryFile);
     }
     formData.append('category', JSON.stringify(categoryAux));
+    formData.append('removeBackground', JSON.stringify(removeBackground));
     return this.http.post<void>(`${this.myAppUrl}${this.myApiUrl}`, formData, {
       withCredentials: true,
     });
