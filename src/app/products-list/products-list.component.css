@@ -56,6 +56,24 @@ body {
     width: 70%;
     max-height: 200px;
   }
+  #buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    button {
+      cursor: pointer;
+      border: 0;
+      background-color: rgb(0, 181, 0);
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-family: sans-serif;
+    }
+    #delete {
+      background-color: #e13933;
+    }
+  }
 }
 #product_item:hover {
   transform: scale(1.05);

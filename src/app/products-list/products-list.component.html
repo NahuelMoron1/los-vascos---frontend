@@ -49,6 +49,21 @@
               <p *ngIf="product.price === 0" id="noPrice">Consultar precio</p>
             </div>
           </div>
+          <div id="buttons" *ngIf="isAdmin()">
+            <button
+              *ngIf="isAdmin()"
+              routerLink="/modify/product/{{ product.id }}"
+            >
+              Modificar
+            </button>
+            <button
+              *ngIf="isAdmin()"
+              id="delete"
+              (click)="deleteProduct(product.id)"
+            >
+              Eliminar
+            </button>
+          </div>
         </div>
       </div>
     </div>

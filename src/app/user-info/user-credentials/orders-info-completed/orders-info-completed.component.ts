@@ -1,10 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { adminGuard } from 'src/app/guards/admin.guard';
 import { CartProduct } from 'src/app/models/CartProduct';
 import { Order } from 'src/app/models/Order';
 import { OrdersAndProducts } from 'src/app/models/OrdersAndProducts';
 import { PublicUser } from 'src/app/models/PublicUser';
-import { User } from 'src/app/models/User';
 import { CartProductService } from 'src/app/services/cart-product.service';
 import { CookieService } from 'src/app/services/cookie.service';
 import { OrderXProductsXOxpService } from 'src/app/services/order-x-products-x-oxp.service';
@@ -17,16 +15,21 @@ import { UserDisplayService } from 'src/app/services/user-display.service';
   styleUrls: ['./orders-info-completed.component.css'],
 })
 export class OrdersInfoCompletedComponent {
-  ordersAndProducts: OrdersAndProducts[] = [];
   oxpService = inject(OrderXProductsXOxpService);
   displayService = inject(UserDisplayService);
   orderService = inject(OrdersService);
   cartProductService = inject(CartProductService);
   cookieService = inject(CookieService);
+
+  ordersAndProducts: OrdersAndProducts[] = [];
   cartProducts: CartProduct[] = [];
   orders: Order[] = [];
+
   user: PublicUser = new PublicUser('', '', '', false);
   admin: PublicUser = new PublicUser('', '', '', false);
+
+  selection: string = 'Pedidos no registrados';
+  selections: string[] = ['Pedidos no registrados', 'Todos los pedidos'];
 
   async ngOnInit() {
     (await this.cookieService.returnUser()).subscribe((data) => {
@@ -38,6 +41,10 @@ export class OrdersInfoCompletedComponent {
     (await this.cookieService.getAdmin()).subscribe((data) => {
       this.admin = data;
     });
+  }
+  changeSelection(event: Event) {
+    const selectedValue = (event.target as HTMLSelectElement).value;
+    this.selection = selectedValue;
   }
   changeDisplay(name: string, orderID: string) {
     this.oxpService.selectOrder(orderID);

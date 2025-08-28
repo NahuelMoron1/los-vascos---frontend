@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent {
-  whatsappNumber = ''; // Incluye el código del país sin '+'
+  whatsappNumber = '5492262336530'; // Incluye el código del país sin '+'
   whatsappMessage = 'Hola! Quiero hacer una consulta sobre un producto. ';
 
-  email = 'info.losvascosdistribucion@gmail.com';
+  email = 'info.distribucionlosvascos@gmail.com';
   subject = 'Consulta sobre productos';
   body = 'Hola, estoy interesado en conocer más sobre ciertos productos';
 

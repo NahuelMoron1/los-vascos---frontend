@@ -1,15 +1,24 @@
 <aside class="sidebar">
   <ul>
-    <li><p (click)="changeDisplay('myAccount')"><i class="fa fa-user" aria-hidden="true"></i> Mi Cuenta</p></li>
-    <li *ngIf="!isAdmin()"><p (click)="changeDisplay('myOrders')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Ordenes</p></li>
+    <li>
+      <p (click)="changeDisplay('myAccount')">
+        <i class="fa fa-user" aria-hidden="true"></i> Mi Cuenta
+      </p>
+    </li>
+    <li *ngIf="!isAdmin()">
+      <p (click)="changeDisplay('myOrders')">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Ordenes
+      </p>
+    </li>
     <li *ngIf="isAdmin()">
       <p (click)="toggleSubmenu('user')">
         <i class="fa fa-external-link" aria-hidden="true"></i> ABM Usuarios
       </p>
-      <ul class="submenu" [ngClass]="{'open': displaySubmenu}">
+      <ul class="submenu" [ngClass]="{ open: displaySubmenu }">
         <li>
           <p [routerLink]="['/admin/signup']">
-            <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar usuario
+            <i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar
+            usuario
           </p>
         </li>
         <li>
@@ -19,20 +28,33 @@
         </li>
         <li>
           <p (click)="changeDisplay('myOrders')">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Ordenes Del Usuario
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Ordenes Del
+            Usuario
           </p>
         </li>
       </ul>
     </li>
-    
-    <li><p (click)="changeDisplay('privacity')"><i class="fa fa-eye-slash" aria-hidden="true"></i> Privacidad</p></li>
-    <li><p (click)="changeDisplay('shipment')"><i class="fa fa-truck" aria-hidden="true"></i> Informacion de envío</p></li>
-    <li *ngIf="!isAdmin()"><p (click)="changeDisplay('support')"><i class="fa fa-info-circle" aria-hidden="true"></i> Soporte Técnico</p></li>
+
+    <li>
+      <p (click)="changeDisplay('privacity')">
+        <i class="fa fa-eye-slash" aria-hidden="true"></i> Privacidad
+      </p>
+    </li>
+    <li>
+      <p (click)="changeDisplay('shipment')">
+        <i class="fa fa-truck" aria-hidden="true"></i> Informacion de envío
+      </p>
+    </li>
+    <li *ngIf="!isAdmin()">
+      <p (click)="changeDisplay('support')">
+        <i class="fa fa-info-circle" aria-hidden="true"></i> Soporte Técnico
+      </p>
+    </li>
     <li>
       <p *ngIf="isAdmin()" (click)="toggleSubmenu('coupon')">
         <i class="fa fa-tasks" aria-hidden="true"></i> ABM Cupones
       </p>
-      <ul class="submenu" [ngClass]="{'open': displayCoupon}">
+      <ul class="submenu" [ngClass]="{ open: displayCoupon }">
         <li>
           <p [routerLink]="['/coupons']">
             <i class="fa fa-plus-circle" aria-hidden="true"></i> Crear Cupón
@@ -41,6 +63,33 @@
         <li>
           <p (click)="changeDisplay('coupon')">
             <i class="fa fa-search" aria-hidden="true"></i> Modificar Cupón
+          </p>
+        </li>
+      </ul>
+    </li>
+    <li *ngIf="isAdmin()">
+      <p (click)="toggleSubmenu('export')">
+        <i class="fa fa-external-link" aria-hidden="true"></i> Exportar
+      </p>
+      <ul class="submenu" [ngClass]="{ open: displayExport }">
+        <li>
+          <p (click)="export('Products')">
+            <i class="fa fa-product-hunt" aria-hidden="true"></i> Productos
+          </p>
+        </li>
+        <li>
+          <p (click)="export('Brands')">
+            <i class="fa fa-bandcamp" aria-hidden="true"></i> Marcas
+          </p>
+        </li>
+        <li>
+          <p (click)="export('Categories')">
+            <i class="fa fa-filter" aria-hidden="true"></i> Categorias
+          </p>
+        </li>
+        <li>
+          <p (click)="export('all')">
+            <i class="fa fa-reply-all" aria-hidden="true"></i> Todos
           </p>
         </li>
       </ul>

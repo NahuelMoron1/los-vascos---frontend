@@ -95,6 +95,14 @@ select {
     width: 60%;
   }
 }
+.ordersSelect {
+  width: fit-content;
+  padding: 1vh 2vh;
+  background: none;
+  border: 1px solid white;
+  border-radius: 12px;
+  color: white;
+}
 /* Tablets (portrait and landscape) */
 @media (min-width: 768px) and (max-width: 1199px) {
   #container {

@@ -190,6 +190,9 @@ export class ProductsListComponent implements OnInit {
     return number.toLocaleString(); // Esto añadirá separadores de miles
   }
   async deleteProduct(productID: string) {
+    if (!this.isAdmin()) {
+      return;
+    }
     let confirmation = confirm('Eliminar producto?');
     if (confirmation) {
       await this.productService.deleteProduct(productID).toPromise();

@@ -287,8 +287,13 @@ select {
     max-height: 10vh;
   }
   #prodOptions {
-    height: 5vh;
+    height: 7vh;
     width: 30vh;
+  }
+  .quantity-container {
+    height: 6vi;
+    width: fit-content;
+    padding: 0 3vi;
   }
 }
 @media (max-width: 279px) {
